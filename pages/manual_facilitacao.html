@@ -1,0 +1,578 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Manual de Facilitação para a Sessão de Design Thinking. Instruções completas para conduzir o workshop.">
+    <meta name="keywords" content="Manual, Facilitação, Design Thinking, Cibra">
+    <meta property="og:title" content="Manual de Facilitação - Sessão de Design Thinking Cibra">
+    <meta property="og:description" content="Manual de Facilitação para a Sessão de Design Thinking. Instruções completas para conduzir o workshop.">
+    <meta property="og:type" content="website">
+    <meta name="robots" content="index, follow">
+    <meta name="theme-color" content="#407928">
+    <link rel="icon" type="image/png" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect fill='%23407928' width='100' height='100'/><text x='50' y='75' font-size='60' font-weight='bold' fill='%23B0D235' text-anchor='middle'>C</text></svg>">
+    <title>Manual de Facilitação - Cibra</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --verde-cibra: #B0D235;
+            --verde-escuro: #407928;
+            --branco: #FFFFFF;
+            --cinza-claro: #F5F5F5;
+            --cinza-escuro: #333333;
+            --cinza-medio: #666666;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            background-color: var(--cinza-claro);
+            color: var(--cinza-escuro);
+            line-height: 1.8;
+        }
+
+        /* Header */
+        header {
+            background: linear-gradient(135deg, var(--verde-escuro) 0%, #2d5a1f 100%);
+            color: var(--branco);
+            padding: 20px 0;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .header-container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .logo-section {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .logo-section img {
+            height: 35px;
+            width: auto;
+        }
+
+        .header-title h1 {
+            font-size: 20px;
+            font-weight: 700;
+            color: var(--branco);
+        }
+
+        .back-btn {
+            background: rgba(255,255,255,0.2);
+            border: 1px solid rgba(255,255,255,0.3);
+            color: var(--branco);
+            padding: 8px 16px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 13px;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            text-decoration: none;
+        }
+
+        .back-btn:hover {
+            background: var(--verde-cibra);
+            color: var(--verde-escuro);
+        }
+
+        /* Main Container */
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        .content {
+            background: var(--branco);
+            border-radius: 8px;
+            padding: 40px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+        }
+
+        h1 {
+            color: var(--verde-escuro);
+            font-size: 32px;
+            margin-bottom: 10px;
+            font-weight: 700;
+        }
+
+        .subtitle {
+            color: var(--cinza-medio);
+            font-size: 14px;
+            margin-bottom: 30px;
+            padding-bottom: 20px;
+            border-bottom: 2px solid var(--cinza-claro);
+        }
+
+        h2 {
+            color: var(--verde-escuro);
+            font-size: 24px;
+            margin-top: 40px;
+            margin-bottom: 20px;
+            font-weight: 700;
+            border-left: 4px solid var(--verde-cibra);
+            padding-left: 15px;
+        }
+
+        h3 {
+            color: var(--verde-escuro);
+            font-size: 18px;
+            margin-top: 25px;
+            margin-bottom: 15px;
+            font-weight: 600;
+        }
+
+        p {
+            margin-bottom: 15px;
+            color: var(--cinza-medio);
+            line-height: 1.8;
+        }
+
+        ul, ol {
+            margin-left: 20px;
+            margin-bottom: 20px;
+            color: var(--cinza-medio);
+        }
+
+        li {
+            margin-bottom: 10px;
+            line-height: 1.8;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            font-size: 14px;
+        }
+
+        th {
+            background: var(--verde-cibra);
+            color: var(--verde-escuro);
+            padding: 12px;
+            text-align: left;
+            font-weight: 600;
+        }
+
+        td {
+            border: 1px solid var(--cinza-claro);
+            padding: 12px;
+            color: var(--cinza-medio);
+        }
+
+        tr:nth-child(even) {
+            background: var(--cinza-claro);
+        }
+
+        .highlight-box {
+            background: linear-gradient(135deg, rgba(176, 210, 53, 0.1) 0%, rgba(64, 121, 40, 0.05) 100%);
+            border-left: 4px solid var(--verde-cibra);
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 4px;
+        }
+
+        .highlight-box strong {
+            color: var(--verde-escuro);
+        }
+
+        .section {
+            margin-bottom: 40px;
+        }
+
+        .toc {
+            background: var(--cinza-claro);
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 30px;
+        }
+
+        .toc h3 {
+            margin-top: 0;
+            color: var(--verde-escuro);
+        }
+
+        .toc ul {
+            list-style: none;
+            margin: 0;
+        }
+
+        .toc li {
+            margin-bottom: 8px;
+        }
+
+        .toc a {
+            color: var(--verde-cibra);
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        .toc a:hover {
+            color: var(--verde-escuro);
+            text-decoration: underline;
+        }
+
+        .footer {
+            margin-top: 60px;
+            padding-top: 20px;
+            border-top: 2px solid var(--cinza-claro);
+            text-align: center;
+            color: var(--cinza-medio);
+            font-size: 13px;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .header-container {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            .content {
+                padding: 25px;
+            }
+
+            h1 {
+                font-size: 24px;
+            }
+
+            h2 {
+                font-size: 20px;
+            }
+
+            table {
+                font-size: 12px;
+            }
+
+            th, td {
+                padding: 8px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-container">
+            <div class="logo-section">
+                <img src="../assets/LogoCibra-Branco-Horizontal-FundoTransparente.png" alt="Cibra Logo">
+                <div class="header-title">
+                    <h1>Manual de Facilitação</h1>
+                </div>
+            </div>
+            <a href="../index.html" class="back-btn">← Voltar ao Início</a>
+        </div>
+    </header>
+
+    <div class="container">
+        <div class="content">
+            <h1>Manual de Facilitação</h1>
+            <div class="subtitle">Guia Completo para Condução da Sessão de Design Thinking - 4 Dias</div>
+
+            <!-- Índice -->
+            <div class="toc">
+                <h3>📑 Índice</h3>
+                <ul>
+                    <li><a href="#introducao">Introdução</a></li>
+                    <li><a href="#preparacao">Preparação e Estrutura</a></li>
+                    <li><a href="#roteiro">Roteiro Detalhado das Dinâmicas</a></li>
+                    <li><a href="#tecnicas">Técnicas de Facilitação</a></li>
+                    <li><a href="#dicas">Dicas Práticas</a></li>
+                </ul>
+            </div>
+
+            <!-- Introdução -->
+            <div class="section" id="introducao">
+                <h2>Introdução</h2>
+                <p>Este manual oferece um guia detalhado para a condução de uma sessão de design thinking de 2,5 dias, projetada para alinhar e integrar os processos das áreas de Planejamento Estratégico, PMO, Novos Negócios e Novos Produtos na Cibra.</p>
+                
+                <p>O objetivo central é utilizar a metodologia do <strong>Duplo Diamante</strong> para:</p>
+                <ul>
+                    <li>Diagnosticar problemas no processo atual</li>
+                    <li>Cocriar soluções integradas</li>
+                    <li>Definir um novo processo corporativo coeso</li>
+                    <li>Estabelecer papéis, responsabilidades e governança</li>
+                </ul>
+
+                <p>O documento está estruturado para guiar o facilitador desde a fase de preparação até a conclusão da sessão, incluindo roteiros detalhados, técnicas de facilitação e estratégias para lidar com desafios comuns.</p>
+            </div>
+
+            <!-- Preparação -->
+            <div class="section" id="preparacao">
+                <h2>Preparação e Estrutura da Sessão</h2>
+                
+                <p>A preparação é um fator crítico para o sucesso da sessão. Uma organização cuidadosa garante que o tempo seja utilizado de forma eficiente e que os participantes se mantenham engajados.</p>
+
+                <h3>Timeline de Preparação</h3>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Fase</th>
+                            <th>Ações Chave</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Duas Semanas Antes</strong></td>
+                            <td>Enviar convite formal e guia de pré-trabalho. Alinhar com co-facilitadores. Preparar primeira versão dos materiais.</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Uma Semana Antes</strong></td>
+                            <td>Confirmar logística da sala. Revisar e finalizar documentos e apresentações.</td>
+                        </tr>
+                        <tr>
+                            <td><strong>No Dia Anterior</strong></td>
+                            <td>Setup completo da sala. Testar equipamentos. Organizar materiais de boas-vindas.</td>
+                        </tr>
+                        <tr>
+                            <td><strong>No Dia da Sessão</strong></td>
+                            <td>Chegar com 1 hora de antecedência. Revisar notas finais. Preparar-se para receber participantes.</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <h3>Estrutura da Sala</h3>
+                <p>A configuração do ambiente físico deve promover a colaboração e a visibilidade:</p>
+                <ul>
+                    <li><strong>Layout:</strong> Mesas dispostas em formato de "U" para facilitar interação</li>
+                    <li><strong>Paredes:</strong> Utilizadas como espaços de trabalho para canvases e flip charts</li>
+                    <li><strong>Iluminação:</strong> Natural quando possível; iluminação adequada para leitura</li>
+                    <li><strong>Temperatura:</strong> Confortável (entre 20-22°C)</li>
+                </ul>
+
+                <h3>Materiais Essenciais</h3>
+                <div class="highlight-box">
+                    <strong>📋 Papelaria:</strong> Flip charts, post-its (cores da marca), canetas, marcadores, fita adesiva<br><br>
+                    <strong>📈 Canvas:</strong> Todos impressos em formato A1 para preenchimento colaborativo<br><br>
+                    <strong>🎥 Equipamentos:</strong> Projetor, som, Wi-Fi, câmera para documentação<br><br>
+                    <strong>📄 Documentação:</strong> Cópias impressas do manual, agenda e regras
+                </div>
+            </div>
+
+            <!-- Roteiro -->
+            <div class="section" id="roteiro">
+                <h2>Roteiro Detalhado das Dinâmicas</h2>
+                
+                <h3>Dia 1 (Segunda-feira, Tarde): Descoberta</h3>
+                <p>A primeira fase é dedicada à <strong>Descoberta</strong>, onde o foco é divergir para explorar o problema em profundidade.</p>
+                
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Horário</th>
+                            <th>Atividade</th>
+                            <th>Objetivos</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>13:30 - 14:30</td>
+                            <td>Abertura e Contextualização</td>
+                            <td>Alinhar objetivos, apresentar agenda, estabelecer confiança</td>
+                        </tr>
+                        <tr>
+                            <td>14:30 - 15:30</td>
+                            <td>Estratégia e Tese de Inovação</td>
+                            <td>Apresentar visão estratégica da Cibra</td>
+                        </tr>
+                        <tr>
+                            <td>15:45 - 16:25</td>
+                            <td>Mapa das Dores</td>
+                            <td>Identificar gargalos e frustrações (Canvas A2)</td>
+                        </tr>
+                        <tr>
+                            <td>16:25 - 17:00</td>
+                            <td>Recap do Dia 1</td>
+                            <td>Síntese das dores identificadas</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <h3>Dia 2 (Terça-feira): Definição e Ideação</h3>
+                <p>O segundo dia foca na <strong>Definição</strong> do problema e desenvolvimento de soluções.</p>
+                
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Horário</th>
+                            <th>Atividade</th>
+                            <th>Canvas</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>08:30 - 09:00</td>
+                            <td>Recapitulação e Priorização</td>
+                            <td>—</td>
+                        </tr>
+                        <tr>
+                            <td>09:00 - 10:30</td>
+                            <td>Como Podemos? (Ideação)</td>
+                            <td>A7</td>
+                        </tr>
+                        <tr>
+                            <td>10:45 - 12:15</td>
+                            <td>Fluxo Ponta a Ponta 1.0</td>
+                            <td>A5</td>
+                        </tr>
+                        <tr>
+                            <td>13:15 - 14:45</td>
+                            <td>Mapa de Empatia</td>
+                            <td>A3</td>
+                        </tr>
+                        <tr>
+                            <td>14:45 - 16:15</td>
+                            <td>Tempos e Movimentos (SLAs)</td>
+                            <td>—</td>
+                        </tr>
+                        <tr>
+                            <td>16:15 - 17:00</td>
+                            <td>Recap do Dia 2</td>
+                            <td>—</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <h3>Dia 3 (Quarta-feira): Desenvolvimento e Entrega</h3>
+                <p>O último dia é dedicado ao <strong>Desenvolvimento</strong> detalhado e à <strong>Entrega</strong> de um plano concreto.</p>
+                
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Horário</th>
+                            <th>Atividade</th>
+                            <th>Canvas</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>08:30 - 09:00</td>
+                            <td>Abertura do Dia 3</td>
+                            <td>—</td>
+                        </tr>
+                        <tr>
+                            <td>09:00 - 10:30</td>
+                            <td>Fluxo Detalhado</td>
+                            <td>A5</td>
+                        </tr>
+                        <tr>
+                            <td>11:00 - 12:30</td>
+                            <td>Matriz RACI</td>
+                            <td>A4</td>
+                        </tr>
+                        <tr>
+                            <td>13:30 - 15:00</td>
+                            <td>Desenho da Governança</td>
+                            <td>A6</td>
+                        </tr>
+                        <tr>
+                            <td>15:15 - 16:30</td>
+                            <td>Plano de Ação</td>
+                            <td>—</td>
+                        </tr>
+                        <tr>
+                            <td>16:30 - 17:00</td>
+                            <td>Encerramento</td>
+                            <td>—</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- Técnicas -->
+            <div class="section" id="tecnicas">
+                <h2>Técnicas de Facilitação</h2>
+                
+                <h3>Perguntas Poderosas</h3>
+                <p>O uso de perguntas abertas é uma das ferramentas mais importantes do facilitador:</p>
+                
+                <div class="highlight-box">
+                    <strong>Para Aprofundar:</strong><br>
+                    "Por que isso é relevante?", "Qual é a causa raiz?", "Qual seria o impacto?"<br><br>
+                    <strong>Para Gerar Ideias:</strong><br>
+                    "E se não houvesse restrições?", "Como outras empresas resolvem isso?", "Qual é a abordagem mais inusitada?"<br><br>
+                    <strong>Para Convergir:</strong><br>
+                    "Qual é o padrão que emerge?", "O que é mais crítico?", "Como simplificar?"
+                </div>
+
+                <h3>Gestão da Dinâmica de Grupo</h3>
+                <ul>
+                    <li><strong>Participação Equilibrada:</strong> Certifique-se de que todos têm voz. Use técnicas como "round-robin" para garantir participação equitativa.</li>
+                    <li><strong>Lidar com Dominadores:</strong> "Obrigado pela contribuição. Vamos ouvir outras perspectivas."</li>
+                    <li><strong>Silêncios Produtivos:</strong> Deixe silêncios para reflexão. Nem sempre é necessário preencher vazios.</li>
+                    <li><strong>Conflitos Construtivos:</strong> Reframe desacordos como oportunidades de aprendizado.</li>
+                </ul>
+            </div>
+
+            <!-- Dicas -->
+            <div class="section" id="dicas">
+                <h2>Dicas Práticas de Facilitação</h2>
+                
+                <h3>✅ Antes da Sessão</h3>
+                <ul>
+                    <li>Revise o pré-trabalho dos participantes</li>
+                    <li>Identifique potenciais conflitos ou dinâmicas desafiadoras</li>
+                    <li>Teste todos os equipamentos</li>
+                    <li>Prepare materiais de backup</li>
+                    <li>Chegue cedo para acolher participantes</li>
+                </ul>
+
+                <h3>✅ Durante a Sessão</h3>
+                <ul>
+                    <li>Mantenha o foco no PROCESSO, não em projetos específicos</li>
+                    <li>Use visual thinking (flip charts, canvases) para manter engajamento</li>
+                    <li>Documente tudo (fotos, notas) para referência posterior</li>
+                    <li>Faça pausas regulares (a cada 90 minutos)</li>
+                    <li>Celebre pequenas vitórias e progressos</li>
+                </ul>
+
+                <h3>✅ Desafios Comuns</h3>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Desafio</th>
+                            <th>Estratégia</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Grupo muito silencioso</td>
+                            <td>Use trabalho individual primeiro, depois compartilhamento em pares</td>
+                        </tr>
+                        <tr>
+                            <td>Discussões que saem do foco</td>
+                            <td>"Ótima observação. Vamos anotar para depois e manter o foco agora."</td>
+                        </tr>
+                        <tr>
+                            <td>Resistência ao novo processo</td>
+                            <td>Reconheça preocupações. Foque em benefícios. Envolva resistentes na solução.</td>
+                        </tr>
+                        <tr>
+                            <td>Falta de tempo</td>
+                            <td>Priorize. Mova discussões secundárias para follow-up. Mantenha ritmo.</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="footer">
+                <p>Manual de Facilitação | Sessão de Design Thinking - Cibra | 2,5 Dias</p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

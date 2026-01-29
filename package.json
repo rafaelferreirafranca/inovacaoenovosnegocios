@@ -1,0 +1,33 @@
+{
+  "name": "cibra-workshop-design-thinking",
+  "version": "2.0.0",
+  "description": "Sessão de Design Thinking - Integração Estratégica da Inovação na Cibra",
+  "main": "index.html",
+  "scripts": {
+    "start": "python3 -m http.server 8000",
+    "serve": "python3 -m http.server 8000",
+    "build": "echo 'Static site - no build needed'",
+    "deploy": "echo 'Use GitHub Pages, Netlify, or Vercel for deployment'"
+  },
+  "keywords": [
+    "Design Thinking",
+    "Cibra",
+    "Workshop",
+    "Inovação",
+    "Canvas"
+  ],
+  "author": "Cibra",
+  "license": "proprietary",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/seu-usuario/cibra-workshop.git"
+  },
+  "engines": {
+    "node": ">=14.0.0"
+  },
+  "browserslist": [
+    "> 1%",
+    "last 2 versions",
+    "not dead"
+  ]
+}

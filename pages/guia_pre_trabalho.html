@@ -1,0 +1,653 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Guia de Pré-Trabalho para a Sessão de Design Thinking. Realize as 3 tarefas de reflexão antes da sessão.">
+    <meta name="keywords" content="Design Thinking, Pré-Trabalho, Reflexão, Cibra">
+    <meta property="og:title" content="Guia de Pré-Trabalho - Sessão de Design Thinking Cibra">
+    <meta property="og:description" content="Guia de Pré-Trabalho para a Sessão de Design Thinking. Realize as 3 tarefas de reflexão antes da sessão.">
+    <meta property="og:type" content="website">
+    <meta name="robots" content="index, follow">
+    <meta name="theme-color" content="#407928">
+    <link rel="icon" type="image/png" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect fill='%23407928' width='100' height='100'/><text x='50' y='75' font-size='60' font-weight='bold' fill='%23B0D235' text-anchor='middle'>C</text></svg>">
+    <title>Guia de Pré-Trabalho - Sessão de Design Thinking Cibra</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --verde-cibra: #B0D235;
+            --verde-escuro: #407928;
+            --branco: #FFFFFF;
+            --cinza-claro: #F5F5F5;
+            --cinza-escuro: #333333;
+            --cinza-medio: #666666;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--cinza-claro);
+            color: var(--cinza-escuro);
+            line-height: 1.6;
+        }
+
+        header {
+            background: linear-gradient(135deg, var(--verde-escuro) 0%, #2d5a1f 100%);
+            color: var(--branco);
+            padding: 20px 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        header img {
+            height: 40px;
+        }
+
+        header h1 {
+            font-size: 20px;
+            font-weight: 600;
+            color: var(--branco);
+        }
+
+        nav a {
+            color: var(--branco);
+            text-decoration: none;
+            margin-left: 30px;
+            font-size: 14px;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: var(--verde-cibra);
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 40px auto;
+            padding: 0 20px;
+        }
+
+        .breadcrumb {
+            margin-bottom: 30px;
+            font-size: 14px;
+            color: var(--cinza-medio);
+        }
+
+        .breadcrumb a {
+            color: var(--verde-cibra);
+            text-decoration: none;
+        }
+
+        .breadcrumb a:hover {
+            text-decoration: underline;
+        }
+
+        .form-header {
+            background: var(--branco);
+            padding: 40px;
+            border-radius: 8px;
+            margin-bottom: 30px;
+            border-top: 4px solid var(--verde-cibra);
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+        }
+
+        .form-header h1 {
+            font-size: 32px;
+            color: var(--verde-escuro);
+            margin-bottom: 15px;
+            font-weight: 700;
+        }
+
+        .form-header p {
+            color: var(--cinza-medio);
+            font-size: 16px;
+            margin-bottom: 20px;
+        }
+
+        .info-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .info-item {
+            background: var(--cinza-claro);
+            padding: 12px;
+            border-radius: 6px;
+            border-left: 3px solid var(--verde-cibra);
+        }
+
+        .info-item strong {
+            color: var(--verde-escuro);
+            display: block;
+            font-size: 12px;
+            text-transform: uppercase;
+            margin-bottom: 5px;
+        }
+
+        .info-item p {
+            font-size: 14px;
+            color: var(--cinza-escuro);
+        }
+
+        .form-section {
+            background: var(--branco);
+            padding: 40px;
+            margin-bottom: 30px;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+        }
+
+        .form-section h2 {
+            font-size: 24px;
+            color: var(--verde-escuro);
+            margin-bottom: 30px;
+            display: flex;
+            align-items: center;
+            font-weight: 700;
+        }
+
+        .form-section h2::before {
+            content: '';
+            display: inline-block;
+            width: 8px;
+            height: 8px;
+            background-color: var(--verde-cibra);
+            border-radius: 50%;
+            margin-right: 15px;
+            flex-shrink: 0;
+        }
+
+        .form-group {
+            margin-bottom: 25px;
+        }
+
+        .form-group:last-child {
+            margin-bottom: 0;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+            color: var(--verde-escuro);
+            font-size: 14px;
+        }
+
+        .label-description {
+            display: block;
+            font-weight: 400;
+            color: var(--cinza-medio);
+            font-size: 13px;
+            margin-bottom: 8px;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        textarea {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ddd;
+            border-radius: 6px;
+            font-family: 'Inter', sans-serif;
+            font-size: 14px;
+            resize: vertical;
+            transition: border-color 0.3s;
+        }
+
+        input[type="text"]:focus,
+        input[type="email"]:focus,
+        textarea:focus {
+            outline: none;
+            border-color: var(--verde-cibra);
+            box-shadow: 0 0 0 3px rgba(176, 210, 53, 0.1);
+        }
+
+        textarea {
+            min-height: 100px;
+        }
+
+        .form-actions {
+            display: flex;
+            gap: 15px;
+            margin-top: 30px;
+            padding-top: 30px;
+            border-top: 1px solid var(--cinza-claro);
+        }
+
+        button {
+            padding: 12px 30px;
+            border: none;
+            border-radius: 6px;
+            font-weight: 600;
+            cursor: pointer;
+            font-size: 14px;
+            transition: all 0.3s;
+        }
+
+        .btn-primary {
+            background-color: var(--verde-cibra);
+            color: var(--verde-escuro);
+            flex: 1;
+        }
+
+        .btn-primary:hover {
+            background-color: #9FBF1F;
+        }
+
+        .btn-secondary {
+            background-color: var(--cinza-claro);
+            color: var(--verde-escuro);
+            border: 1px solid #ddd;
+        }
+
+        .btn-secondary:hover {
+            background-color: #e8e8e8;
+        }
+
+        .reflexoes-section {
+            background: var(--branco);
+            padding: 40px;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+        }
+
+        .reflexoes-section h2 {
+            font-size: 24px;
+            color: var(--verde-escuro);
+            margin-bottom: 30px;
+            display: flex;
+            align-items: center;
+            font-weight: 700;
+        }
+
+        .reflexoes-section h2::before {
+            content: '';
+            display: inline-block;
+            width: 8px;
+            height: 8px;
+            background-color: var(--verde-cibra);
+            border-radius: 50%;
+            margin-right: 15px;
+            flex-shrink: 0;
+        }
+
+        .reflexao-item {
+            background-color: var(--cinza-claro);
+            padding: 20px;
+            margin-bottom: 15px;
+            border-radius: 6px;
+            border-left: 4px solid var(--verde-cibra);
+        }
+
+        .reflexao-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 12px;
+        }
+
+        .reflexao-item strong {
+            color: var(--verde-escuro);
+            font-size: 15px;
+        }
+
+        .reflexao-item .area {
+            font-size: 13px;
+            color: var(--cinza-medio);
+            margin-top: 4px;
+        }
+
+        .reflexao-item .data {
+            font-size: 12px;
+            color: var(--cinza-medio);
+        }
+
+        .reflexao-item p {
+            color: var(--cinza-escuro);
+            font-size: 14px;
+            line-height: 1.6;
+            margin-top: 12px;
+            white-space: pre-wrap;
+            word-wrap: break-word;
+        }
+
+        .empty-state {
+            text-align: center;
+            padding: 40px 20px;
+            color: var(--cinza-medio);
+        }
+
+        .empty-state p {
+            font-size: 16px;
+            margin-bottom: 10px;
+        }
+
+        footer {
+            background-color: var(--verde-escuro);
+            color: var(--branco);
+            text-align: center;
+            padding: 30px 20px;
+            margin-top: 60px;
+        }
+
+        footer img {
+            height: 30px;
+            margin-bottom: 15px;
+        }
+
+        .footer-text {
+            font-size: 12px;
+            color: #ccc;
+        }
+
+        .success-message {
+            background: #d4edda;
+            border: 1px solid #c3e6cb;
+            color: #155724;
+            padding: 12px;
+            border-radius: 6px;
+            margin-bottom: 20px;
+            display: none;
+        }
+
+        .success-message.show {
+            display: block;
+        }
+
+        @media (max-width: 768px) {
+            header {
+                flex-direction: column;
+                padding: 15px;
+                gap: 15px;
+            }
+
+            header h1 {
+                font-size: 18px;
+            }
+
+            nav {
+                display: flex;
+                flex-wrap: wrap;
+                gap: 15px;
+                justify-content: center;
+            }
+
+            nav a {
+                margin-left: 0;
+            }
+
+            .form-header,
+            .form-section,
+            .reflexoes-section {
+                padding: 25px;
+            }
+
+            .form-header h1 {
+                font-size: 24px;
+            }
+
+            .form-section h2,
+            .reflexoes-section h2 {
+                font-size: 20px;
+            }
+
+            .info-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .form-actions {
+                flex-direction: column;
+            }
+
+            button {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div style="display: flex; align-items: center; gap: 15px;">
+            <img src="../assets/LogoCibra-Branco-Horizontal-FundoTransparente.png" alt="Logo Cibra">
+            <h1>Guia de Pré-Trabalho</h1>
+        </div>
+        <a href="../index.html" style="color: var(--branco); text-decoration: none; font-size: 14px; font-weight: 500;">← Voltar</a>
+    </header>
+
+    <div class="container">
+        <div class="breadcrumb">
+            <a href="../index.html">Início</a> / Guia de Pré-Trabalho
+        </div>
+
+        <!-- Cabeçalho do Formulário -->
+        <div class="form-header">
+            <h1>Prepare-se para a Sessão</h1>
+            <p>Complete as 3 tarefas abaixo para chegar preparado(a) e aproveitar melhor o tempo juntos. Suas reflexões ajudam a alinhar o grupo e gerar discussões mais profundas.</p>
+            
+            <div class="info-grid">
+                <div class="info-item">
+                    <strong>📅 Data</strong>
+                    <p>02 a 06 de Fevereiro</p>
+                </div>
+                <div class="info-item">
+                    <strong>⏰ Horário</strong>
+                    <p>Seg 13:30 | Ter-Qua 08:30 | Qui 08:30</p>
+                </div>
+                <div class="info-item">
+                    <strong>📍 Local</strong>
+                    <p>NEX + PUCPR</p>
+                </div>
+                <div class="info-item">
+                    <strong>👥 Participantes</strong>
+                    <p>8 Líderes</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Formulário de Reflexões -->
+        <div class="form-section">
+            <h2>Suas Reflexões</h2>
+
+            <div class="success-message" id="successMessage">
+                ✓ Reflexão enviada com sucesso! Obrigado por compartilhar.
+            </div>
+
+            <form id="reflexaoForm">
+                <div class="form-group">
+                    <label for="nome">Seu Nome *</label>
+                    <input type="text" id="nome" placeholder="Digite seu nome completo" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="area">Sua Área *</label>
+                    <input type="text" id="area" placeholder="Ex: Planejamento Estratégico, PMO, Novos Negócios, Produtos, etc." required>
+                </div>
+
+                <div class="form-group">
+                    <label>Tarefa 1: Mapeie os Principais Desafios *</label>
+                    <span class="label-description">Identifique os 3-5 principais problemas que você vê na integração entre sua área e as demais (falta de comunicação, processos desalinhados, silos, etc.)</span>
+                    <textarea id="tarefa1" placeholder="Descreva os desafios..." required></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label>Tarefa 2: Defina Suas Expectativas *</label>
+                    <span class="label-description">O que você espera sair dessa sessão? Qual é o resultado ideal para você e sua área?</span>
+                    <textarea id="tarefa2" placeholder="Descreva suas expectativas..." required></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label>Tarefa 3: Identifique Oportunidades *</label>
+                    <span class="label-description">Que mudanças no processo integrado poderiam gerar mais valor para a Cibra?</span>
+                    <textarea id="tarefa3" placeholder="Descreva as oportunidades..." required></textarea>
+                </div>
+
+                <div class="form-actions">
+                    <button type="submit" class="btn-primary">Enviar Reflexões</button>
+                    <button type="reset" class="btn-secondary">Limpar</button>
+                </div>
+            </form>
+        </div>
+
+        <!-- Reflexões Públicas -->
+        <div class="reflexoes-section">
+            <h2>Reflexões dos Participantes</h2>
+            <p style="color: var(--cinza-medio); margin-bottom: 25px;">Veja as perspectivas dos demais participantes:</p>
+            <div id="reflexoes-container"></div>
+        </div>
+    </div>
+
+    <footer>
+        <img src="../assets/LogoCibra-Branco-Horizontal-FundoTransparente.png" alt="Logo Cibra">
+        <p class="footer-text">© 2026 Cibra. Sessão de Design Thinking - Integração Estratégica</p>
+    </footer>
+
+    <script>
+        // Limpar dados de teste (executar uma vez)
+        localStorage.removeItem('reflexoes');
+
+        // Função segura para acessar localStorage
+        function getStorageData(key, defaultValue = []) {
+            try {
+                const data = localStorage.getItem(key);
+                return data ? JSON.parse(data) : defaultValue;
+            } catch (e) {
+                console.error('Erro ao ler localStorage:', e);
+                return defaultValue;
+            }
+        }
+
+        // Função segura para salvar em localStorage
+        function setStorageData(key, value) {
+            try {
+                localStorage.setItem(key, JSON.stringify(value));
+                return true;
+            } catch (e) {
+                console.error('Erro ao salvar em localStorage:', e);
+                if (e.name === 'QuotaExceededError') {
+                    alert('Espaço de armazenamento cheio. Por favor, limpe o cache do navegador.');
+                } else {
+                    alert('Não foi possível salvar os dados. Verifique as configurações do navegador.');
+                }
+                return false;
+            }
+        }
+
+        // Verificar disponibilidade de localStorage
+        function isLocalStorageAvailable() {
+            try {
+                const test = '__localStorage_test__';
+                localStorage.setItem(test, test);
+                localStorage.removeItem(test);
+                return true;
+            } catch (e) {
+                return false;
+            }
+        }
+
+        // Carregar reflexões ao abrir a página
+        function carregarReflexoes() {
+            const reflexoes = getStorageData('reflexoes', []);
+            const container = document.getElementById('reflexoes-container');
+            
+            if (reflexoes.length === 0) {
+                container.innerHTML = '<div class="empty-state"><p>Nenhuma reflexão compartilhada ainda.</p><p>Seja o primeiro a compartilhar suas reflexões!</p></div>';
+                return;
+            }
+
+            container.innerHTML = reflexoes.map((r, index) => {
+                const dataFormatada = new Date(r.data).toLocaleDateString('pt-BR', { 
+                    year: 'numeric', 
+                    month: 'long', 
+                    day: 'numeric', 
+                    hour: '2-digit', 
+                    minute: '2-digit' 
+                });
+                
+                return `
+                <div class="reflexao-item">
+                    <div class="reflexao-header">
+                        <div>
+                            <strong>${r.nome}</strong>
+                            <div class="area">${r.area}</div>
+                        </div>
+                        <div class="data">${dataFormatada}</div>
+                    </div>
+                    <div>
+                        <p><strong>Desafios:</strong> ${r.tarefa1}</p>
+                        <p style="margin-top: 10px;"><strong>Expectativas:</strong> ${r.tarefa2}</p>
+                        <p style="margin-top: 10px;"><strong>Oportunidades:</strong> ${r.tarefa3}</p>
+                    </div>
+                </div>
+            `;
+            }).join('');
+        }
+
+        // Adicionar nova reflexão
+        document.getElementById('reflexaoForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+
+            const nome = document.getElementById('nome').value.trim();
+            const area = document.getElementById('area').value.trim();
+            const tarefa1 = document.getElementById('tarefa1').value.trim();
+            const tarefa2 = document.getElementById('tarefa2').value.trim();
+            const tarefa3 = document.getElementById('tarefa3').value.trim();
+
+            if (!nome || !area || !tarefa1 || !tarefa2 || !tarefa3) {
+                alert('Por favor, preencha todos os campos.');
+                return;
+            }
+
+            if (!isLocalStorageAvailable()) {
+                alert('localStorage não está disponível. Verifique as configurações do navegador.');
+                return;
+            }
+
+            const reflexoes = getStorageData('reflexoes', []);
+            reflexoes.push({
+                nome,
+                area,
+                tarefa1,
+                tarefa2,
+                tarefa3,
+                data: new Date().toISOString()
+            });
+
+            if (!setStorageData('reflexoes', reflexoes)) {
+                console.error('Falha ao salvar reflexão');
+                return;
+            }
+
+            // Mostrar mensagem de sucesso
+            const successMsg = document.getElementById('successMessage');
+            successMsg.classList.add('show');
+            setTimeout(() => {
+                successMsg.classList.remove('show');
+            }, 5000);
+
+            // Limpar formulário
+            document.getElementById('reflexaoForm').reset();
+
+            // Recarregar lista
+            carregarReflexoes();
+
+            // Scroll para reflexões
+            document.querySelector('.reflexoes-section').scrollIntoView({ behavior: 'smooth' });
+        });
+
+        // Inicializar ao carregar a página
+        window.addEventListener('load', carregarReflexoes);
+    </script>
+</body>
+</html>

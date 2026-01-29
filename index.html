@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Sessão de Design Thinking para integração estratégica na Cibra. Acesse materiais, cronograma, canvas e ferramentas para o workshop.">
+    <meta name="keywords" content="Design Thinking, Cibra, Workshop, Inovação, Canvas">
+    <meta name="author" content="Cibra">
+    <meta property="og:title" content="Sessão de Design Thinking - Cibra">
+    <meta property="og:description" content="Sessão de Design Thinking para integração estratégica na Cibra.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://cibra-workshop.com">
+    <meta property="og:image" content="https://cibra-workshop.com/assets/LogoCibra-Branco-Horizontal-FundoTransparente.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Sessão de Design Thinking - Cibra">
+    <meta name="twitter:description" content="Sessão de Design Thinking para integração estratégica na Cibra.">
+    <meta name="theme-color" content="#407928">
+    <meta name="robots" content="index, follow">
+    <meta name="language" content="Portuguese">
+    <meta name="revisit-after" content="7 days">
+    <link rel="icon" type="image/png" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect fill='%23407928' width='100' height='100'/><text x='50' y='75' font-size='60' font-weight='bold' fill='%23B0D235' text-anchor='middle'>C</text></svg>">
+    <title>Sessão de Design Thinking - Cibra</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --verde-cibra: #B0D235;
+            --verde-escuro: #407928;
+            --branco: #FFFFFF;
+            --cinza-claro: #F5F5F5;
+            --cinza-escuro: #333333;
+            --cinza-medio: #666666;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            background-color: var(--cinza-claro);
+            color: var(--cinza-escuro);
+            line-height: 1.8;
+        }
+
+        /* Header */
+        header {
+            background: linear-gradient(135deg, var(--verde-escuro) 0%, #2d5a1f 100%);
+            color: var(--branco);
+            padding: 20px 0;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .header-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .logo-section {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .logo-section img {
+            height: 40px;
+            object-fit: contain;
+        }
+
+        .header-title h1 {
+            font-size: 24px;
+            font-weight: 700;
+            letter-spacing: -0.5px;
+            color: var(--branco);
+        }
+
+        .header-title p {
+            font-size: 12px;
+            font-weight: 300;
+            opacity: 0.9;
+            color: var(--branco);
+        }
+
+        /* Main Container */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 60px 20px;
+        }
+
+        /* Materials Section */
+        .materials-section {
+            margin-bottom: 80px;
+        }
+
+        .materials-section h2 {
+            font-size: 32px;
+            color: var(--verde-escuro);
+            margin-bottom: 40px;
+            font-weight: 700;
+        }
+
+        .materials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 24px;
+        }
+
+        .material-card {
+            background: var(--branco);
+            border-radius: 12px;
+            padding: 30px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+            transition: all 0.3s ease;
+            border-left: 4px solid var(--verde-cibra);
+            text-decoration: none;
+            color: inherit;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .material-card:hover {
+            box-shadow: 0 8px 24px rgba(0,0,0,0.12);
+            transform: translateY(-4px);
+        }
+
+        .material-icon {
+            font-size: 48px;
+            line-height: 1;
+        }
+
+        .material-card h3 {
+            font-size: 18px;
+            color: var(--verde-escuro);
+            font-weight: 600;
+        }
+
+        .material-card p {
+            font-size: 14px;
+            color: var(--cinza-medio);
+            margin: 0;
+        }
+
+        .material-card .cta {
+            color: var(--verde-cibra);
+            font-weight: 600;
+            font-size: 14px;
+            margin-top: 10px;
+        }
+
+        /* Sections Grid */
+        .sections-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin-bottom: 60px;
+        }
+
+        .section-card {
+            background: var(--branco);
+            border-radius: 12px;
+            padding: 25px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+            border-top: 3px solid var(--verde-cibra);
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+
+        .section-card:hover {
+            box-shadow: 0 8px 24px rgba(0,0,0,0.12);
+            transform: translateY(-4px);
+        }
+
+        .section-card h4 {
+            color: var(--verde-escuro);
+            font-size: 16px;
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+
+        .section-card p {
+            font-size: 13px;
+            color: var(--cinza-medio);
+        }
+
+        /* Footer */
+        footer {
+            background: var(--verde-escuro);
+            color: var(--branco);
+            padding: 40px 0;
+            margin-top: 80px;
+            text-align: center;
+        }
+
+        .footer-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        footer img {
+            height: 40px;
+            margin-bottom: 20px;
+        }
+
+        footer p {
+            margin: 5px 0;
+            font-size: 14px;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .header-container {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            nav {
+                flex-wrap: wrap;
+                gap: 15px;
+                justify-content: center;
+            }
+
+            .hero h1 {
+                font-size: 32px;
+            }
+
+            .hero p {
+                font-size: 16px;
+            }
+
+            .materials-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .sections-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="header-container">
+            <div class="logo-section">
+                <img src="assets/LogoCibra-Branco-Horizontal-FundoTransparente.png" alt="Logo Cibra">
+                <div class="header-title">
+                    <h1>Design Thinking</h1>
+                    <p>Integração Estratégica 2026</p>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <div class="container">
+
+
+        <!-- Materials Section -->
+        <section class="materials-section">
+            <h2>📚 Materiais da Sessão</h2>
+            <div class="materials-grid">
+                <a href="pages/manual_facilitacao.html" class="material-card">
+                    <div class="material-icon">📖</div>
+                    <h3>Manual de Facilitação</h3>
+                    <p>Guia passo a passo para o facilitador com scripts, tempos e dicas práticas.</p>
+                    <div class="cta">Acessar →</div>
+                </a>
+
+                <a href="pages/guia_pre_trabalho.html" class="material-card">
+                    <div class="material-icon">🎯</div>
+                    <h3>Guia de Pré-Trabalho</h3>
+                    <p>Tarefas e informações práticas para os participantes antes da sessão.</p>
+                    <div class="cta">Acessar →</div>
+                </a>
+
+                <a href="pages/planejamento_sessao.html" class="material-card">
+                    <div class="material-icon">📊</div>
+                    <h3>Planejamento da Sessão</h3>
+                    <p>Estrutura completa com cronograma detalhado e objetivos de cada fase.</p>
+                    <div class="cta">Acessar →</div>
+                </a>
+
+                <a href="pages/templates_canvases.html" class="material-card">
+                    <div class="material-icon">🎨</div>
+                    <h3>Templates de Canvas</h3>
+                    <p>Descrição dos 7 canvases com instruções de preenchimento e facilitação.</p>
+                    <div class="cta">Acessar →</div>
+                </a>
+
+                <a href="pages/checklist_materiais.html" class="material-card">
+                    <div class="material-icon">✅</div>
+                    <h3>Checklist de Materiais</h3>
+                    <p>Lista completa de materiais físicos, digitais e infraestrutura necessária.</p>
+                    <div class="cta">Acessar →</div>
+                </a>
+
+                <a href="pages/portal.html" class="material-card">
+                    <div class="material-icon">🌐</div>
+                    <h3>Portal Integrado</h3>
+                    <p>Visão centralizada com calendário, participantes e FAQ interativo.</p>
+                    <div class="cta">Acessar →</div>
+                </a>
+            </div>
+        </section>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-container">
+            <div class="footer-logo">
+                <img src="assets/LogoCibra-Branco-Horizontal-FundoTransparente.png" alt="Cibra Logo">
+            </div>
+            <p><strong>Sessão de Design Thinking - Integração Estratégica 2026</strong></p>
+            <p>Construindo o futuro integrado da inovação na Cibra</p>
+            <p style="margin-top: 20px; font-size: 12px; opacity: 0.7;">© 2026 Cibra. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,891 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Checklist de Materiais para a Sessão de Design Thinking. Verifique todos os itens necessários para o workshop.">
+    <meta name="keywords" content="Checklist, Materiais, Design Thinking, Cibra">
+    <meta property="og:title" content="Checklist de Materiais - Sessão de Design Thinking Cibra">
+    <meta property="og:description" content="Checklist de Materiais para a Sessão de Design Thinking. Verifique todos os itens necessários para o workshop.">
+    <meta property="og:type" content="website">
+    <meta name="robots" content="index, follow">
+    <meta name="theme-color" content="#407928">
+    <link rel="icon" type="image/png" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect fill='%23407928' width='100' height='100'/><text x='50' y='75' font-size='60' font-weight='bold' fill='%23B0D235' text-anchor='middle'>C</text></svg>">
+    <title>Checklist de Materiais - Cibra</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --verde-cibra: #B0D235;
+            --verde-escuro: #407928;
+            --branco: #FFFFFF;
+            --cinza-claro: #F5F5F5;
+            --cinza-escuro: #333333;
+            --cinza-medio: #666666;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            background-color: var(--cinza-claro);
+            color: var(--cinza-escuro);
+            line-height: 1.8;
+        }
+
+        /* Header */
+        header {
+            background: linear-gradient(135deg, var(--verde-escuro) 0%, #2d5a1f 100%);
+            color: var(--branco);
+            padding: 20px 0;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .header-container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .logo-section {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .logo-section img {
+            height: 35px;
+            width: auto;
+        }
+
+        .header-title h1 {
+            font-size: 20px;
+            font-weight: 700;
+            color: var(--branco);
+        }
+
+        .back-btn {
+            background: rgba(255,255,255,0.2);
+            border: 1px solid rgba(255,255,255,0.3);
+            color: var(--branco);
+            padding: 8px 16px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 13px;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            text-decoration: none;
+        }
+
+        .back-btn:hover {
+            background: var(--verde-cibra);
+            color: var(--verde-escuro);
+        }
+
+        /* Main Container */
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        .content {
+            background: var(--branco);
+            border-radius: 8px;
+            padding: 40px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+        }
+
+        h1 {
+            color: var(--verde-escuro);
+            font-size: 32px;
+            margin-bottom: 10px;
+            font-weight: 700;
+        }
+
+        .subtitle {
+            color: var(--cinza-medio);
+            font-size: 14px;
+            margin-bottom: 30px;
+            padding-bottom: 20px;
+            border-bottom: 2px solid var(--cinza-claro);
+        }
+
+        h2 {
+            color: var(--verde-escuro);
+            font-size: 24px;
+            margin-top: 40px;
+            margin-bottom: 20px;
+            font-weight: 700;
+            border-left: 4px solid var(--verde-cibra);
+            padding-left: 15px;
+        }
+
+        h3 {
+            color: var(--verde-escuro);
+            font-size: 18px;
+            margin-top: 25px;
+            margin-bottom: 15px;
+            font-weight: 600;
+        }
+
+        p {
+            margin-bottom: 15px;
+            color: var(--cinza-medio);
+            line-height: 1.8;
+        }
+
+        .highlight-box {
+            background: linear-gradient(135deg, rgba(176, 210, 53, 0.1) 0%, rgba(64, 121, 40, 0.05) 100%);
+            border-left: 4px solid var(--verde-cibra);
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 4px;
+        }
+
+        .checklist-section {
+            background: var(--cinza-claro);
+            border-left: 4px solid var(--verde-cibra);
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 4px;
+        }
+
+        .checklist-item {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 15px;
+            padding: 10px;
+            background: var(--branco);
+            border-radius: 4px;
+            border: 1px solid var(--cinza-claro);
+        }
+
+        .checklist-item input[type="checkbox"] {
+            width: 20px;
+            height: 20px;
+            margin-right: 15px;
+            margin-top: 2px;
+            cursor: pointer;
+            accent-color: var(--verde-cibra);
+        }
+
+        .checklist-item label {
+            flex: 1;
+            cursor: pointer;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .checklist-item input[type="checkbox"]:checked + label {
+            color: var(--cinza-medio);
+            text-decoration: line-through;
+        }
+
+        .item-title {
+            font-weight: 600;
+            color: var(--verde-escuro);
+            margin-bottom: 5px;
+        }
+
+        .item-description {
+            font-size: 13px;
+            color: var(--cinza-medio);
+        }
+
+        .quantity {
+            display: inline-block;
+            background: var(--verde-cibra);
+            color: var(--verde-escuro);
+            padding: 2px 8px;
+            border-radius: 12px;
+            font-size: 12px;
+            font-weight: 600;
+            margin-left: 10px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            font-size: 14px;
+        }
+
+        th {
+            background: var(--verde-cibra);
+            color: var(--verde-escuro);
+            padding: 12px;
+            text-align: left;
+            font-weight: 600;
+        }
+
+        td {
+            border: 1px solid var(--cinza-claro);
+            padding: 12px;
+            color: var(--cinza-medio);
+        }
+
+        tr:nth-child(even) {
+            background: var(--cinza-claro);
+        }
+
+        .action-buttons {
+            display: flex;
+            gap: 10px;
+            margin: 30px 0;
+            justify-content: center;
+        }
+
+        .btn {
+            padding: 12px 24px;
+            border-radius: 4px;
+            border: none;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-size: 14px;
+        }
+
+        .btn-primary {
+            background: var(--verde-cibra);
+            color: var(--verde-escuro);
+        }
+
+        .btn-primary:hover {
+            background: var(--verde-escuro);
+            color: var(--branco);
+        }
+
+        .btn-secondary {
+            background: var(--cinza-claro);
+            color: var(--verde-escuro);
+            border: 2px solid var(--verde-cibra);
+        }
+
+        .btn-secondary:hover {
+            background: var(--verde-cibra);
+        }
+
+        .progress-bar {
+            width: 100%;
+            height: 30px;
+            background: var(--cinza-claro);
+            border-radius: 4px;
+            overflow: hidden;
+            margin: 20px 0;
+            border: 2px solid var(--verde-cibra);
+        }
+
+        .progress-fill {
+            height: 100%;
+            background: linear-gradient(90deg, var(--verde-cibra) 0%, var(--verde-escuro) 100%);
+            width: 0%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--branco);
+            font-weight: 600;
+            font-size: 12px;
+            transition: width 0.3s ease;
+        }
+
+        .footer {
+            margin-top: 60px;
+            padding-top: 20px;
+            border-top: 2px solid var(--cinza-claro);
+            text-align: center;
+            color: var(--cinza-medio);
+            font-size: 13px;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .header-container {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            .content {
+                padding: 25px;
+            }
+
+            h1 {
+                font-size: 24px;
+            }
+
+            h2 {
+                font-size: 20px;
+            }
+
+            .action-buttons {
+                flex-direction: column;
+            }
+
+            .btn {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-container">
+            <div class="logo-section">
+                <img src="../assets/LogoCibra-Branco-Horizontal-FundoTransparente.png" alt="Cibra Logo">
+                <div class="header-title">
+                    <h1>Checklist de Materiais</h1>
+                </div>
+            </div>
+            <a href="../index.html" class="back-btn">← Voltar ao Início</a>
+        </div>
+    </header>
+
+    <div class="container">
+        <div class="content">
+            <h1>Checklist de Materiais</h1>
+            <div class="subtitle">Guia Completo de Logística e Materiais para a Sessão</div>
+
+            <div class="highlight-box">
+                <strong>📋 Progresso do Checklist:</strong>
+                <div class="progress-bar">
+                    <div class="progress-fill" id="progressFill">0%</div>
+                </div>
+            </div>
+
+            <!-- Impressão dos Canvas -->
+            <h2>🞨 Impressão dos Canvas (Prioridade: ALTA)</h2>
+            <div class="checklist-section">
+                <h3>Especificações de Impressão</h3>
+                <p>Todos os canvases devem ser impressos em <strong>cartolina 180g</strong>, tamanho <strong>A0 (84 x 118 cm)</strong> ou <strong>A1 (59 x 84 cm)</strong>.</p>
+                
+                <div class="checklist-item">
+                    <input type="checkbox" id="item1" onchange="updateProgress()">
+                    <label for="item1">
+                        <span class="item-title">Canvas A1 - Expectativa vs. Realidade</span>
+                        <span class="item-description">Arquivo: canvas_a1_expectativa_realidade.png | Quantidade: 1 unidade</span>
+                    </label>
+                </div>
+
+                <div class="checklist-item">
+                    <input type="checkbox" id="item2" onchange="updateProgress()">
+                    <label for="item2">
+                        <span class="item-title">Canvas A2 - Mapa das Dores</span>
+                        <span class="item-description">Arquivo: canvas_a2_mapa_dores.png | Quantidade: 1 unidade</span>
+                    </label>
+                </div>
+
+                <div class="checklist-item">
+                    <input type="checkbox" id="item3" onchange="updateProgress()">
+                    <label for="item3">
+                        <span class="item-title">Canvas A3 - Mapa de Empatia</span>
+                        <span class="item-description">Arquivo: canvas_a3_mapa_empatia.png | Quantidade: 1 unidade</span>
+                    </label>
+                </div>
+
+                <div class="checklist-item">
+                    <input type="checkbox" id="item4" onchange="updateProgress()">
+                    <label for="item4">
+                        <span class="item-title">Canvas A4 - Matriz RACI</span>
+                        <span class="item-description">Arquivo: canvas_a4_matriz_raci.png | Quantidade: 1 unidade</span>
+                    </label>
+                </div>
+
+                <div class="checklist-item">
+                    <input type="checkbox" id="item5" onchange="updateProgress()">
+                    <label for="item5">
+                        <span class="item-title">Canvas A5 - Fluxo Ponta a Ponta</span>
+                        <span class="item-description">Arquivo: canvas_a5_fluxo_ponta_ponta.png | Quantidade: 1 unidade</span>
+                    </label>
+                </div>
+
+                <div class="checklist-item">
+                    <input type="checkbox" id="item6" onchange="updateProgress()">
+                    <label for="item6">
+                        <span class="item-title">Canvas A6 - Governança</span>
+                        <span class="item-description">Arquivo: canvas_a6_governanca.png | Quantidade: 1 unidade</span>
+                    </label>
+                </div>
+
+                <div class="checklist-item">
+                    <input type="checkbox" id="item7" onchange="updateProgress()">
+                    <label for="item7">
+                        <span class="item-title">Canvas A7 - Como Podemos?</span>
+                        <span class="item-description">Arquivo: canvas_a7_como_podemos.png | Quantidade: 1 unidade</span>
+                    </label>
+                </div>
+            </div>
+
+            <!-- Materiais de Papelaria -->
+            <h2>📝 Materiais de Papelaria (Prioridade: ALTA)</h2>
+            <div class="checklist-section">
+                <div class="checklist-item">
+                    <input type="checkbox" id="item8" onchange="updateProgress()">
+                    <label for="item8">
+                        <span class="item-title">Post-its Coloridos</span>
+                        <span class="item-description">Cores: Verde, Amarelo, Rosa, Azul | Quantidade: 10 blocos (100 folhas cada)</span>
+                    </label>
+                </div>
+
+                <div class="checklist-item">
+                    <input type="checkbox" id="item9" onchange="updateProgress()">
+                    <label for="item9">
+                        <span class="item-title">Canetas Marcador (Sharpie)</span>
+                        <span class="item-description">Cores: Preto, Azul, Vermelho, Verde | Quantidade: 20 unidades</span>
+                    </label>
+                </div>
+
+                <div class="checklist-item">
+                    <input type="checkbox" id="item10" onchange="updateProgress()">
+                    <label for="item10">
+                        <span class="item-title">Canetas para Flipchart</span>
+                        <span class="item-description">Cores variadas | Quantidade: 15 unidades</span>
+                    </label>
+                </div>
+
+                <div class="checklist-item">
+                    <input type="checkbox" id="item11" onchange="updateProgress()">
+                    <label for="item11">
+                        <span class="item-title">Fita Crepe</span>
+                        <span class="item-description">Largura: 2,5 cm | Quantidade: 10 rolos</span>
+                    </label>
+                </div>
+
+                <div class="checklist-item">
+                    <input type="checkbox" id="item12" onchange="updateProgress()">
+                    <label for="item12">
+                        <span class="item-title">Gometes/Adesivos para Votação</span>
+                        <span class="item-description">Cores: Verde e Vermelho | Quantidade: 500 unidades</span>
+                    </label>
+                </div>
+
+                <div class="checklist-item">
+                    <input type="checkbox" id="item13" onchange="updateProgress()">
+                    <label for="item13">
+                        <span class="item-title">Papel A4 (Branco)</span>
+                        <span class="item-description">Para anotações e síntese | Quantidade: 1 resma (500 folhas)</span>
+                    </label>
+                </div>
+
+                <div class="checklist-item">
+                    <input type="checkbox" id="item14" onchange="updateProgress()">
+                    <label for="item14">
+                        <span class="item-title">Blocos de Anotações</span>
+                        <span class="item-description">Para cada participante | Quantidade: 8 unidades</span>
+                    </label>
+                </div>
+
+                <div class="checklist-item">
+                    <input type="checkbox" id="item15" onchange="updateProgress()">
+                    <label for="item15">
+                        <span class="item-title">Canetas Azuis</span>
+                        <span class="item-description">Para cada participante | Quantidade: 8 unidades</span>
+                    </label>
+                </div>
+            </div>
+
+            <!-- Equipamentos e Infraestrutura -->
+            <h2>⚙️ Equipamentos e Infraestrutura (Prioridade: ALTA)</h2>
+            <div class="checklist-section">
+                <div class="checklist-item">
+                    <input type="checkbox" id="item16" onchange="updateProgress()">
+                    <label for="item16">
+                        <span class="item-title">Projetor</span>
+                        <span class="item-description">Resolução mínima: 1920x1080 | Quantidade: 1 unidade</span>
+                    </label>
+                </div>
+
+                <div class="checklist-item">
+                    <input type="checkbox" id="item17" onchange="updateProgress()">
+                    <label for="item17">
+                        <span class="item-title">Tela de Projeção</span>
+                        <span class="item-description">Tamanho: mínimo 2m | Quantidade: 1 unidade</span>
+                    </label>
+                </div>
+
+                <div class="checklist-item">
+                    <input type="checkbox" id="item18" onchange="updateProgress()">
+                    <label for="item18">
+                        <span class="item-title">Notebook/Computador</span>
+                        <span class="item-description">Com apresentação e documentos | Quantidade: 1 unidade</span>
+                    </label>
+                </div>
+
+                <div class="checklist-item">
+                    <input type="checkbox" id="item19" onchange="updateProgress()">
+                    <label for="item19">
+                        <span class="item-title">Sistema de Som</span>
+                        <span class="item-description">Para amplificar áudio | Quantidade: 1 unidade</span>
+                    </label>
+                </div>
+
+                <div class="checklist-item">
+                    <input type="checkbox" id="item20" onchange="updateProgress()">
+                    <label for="item20">
+                        <span class="item-title">Flipchart com Papel</span>
+                        <span class="item-description">Para anotações do facilitador | Quantidade: 2 unidades</span>
+                    </label>
+                </div>
+
+                <div class="checklist-item">
+                    <input type="checkbox" id="item21" onchange="updateProgress()">
+                    <label for="item21">
+                        <span class="item-title">Quadro Branco</span>
+                        <span class="item-description">Alternativa ao flipchart | Quantidade: 1 unidade</span>
+                    </label>
+                </div>
+
+                <div class="checklist-item">
+                    <input type="checkbox" id="item22" onchange="updateProgress()">
+                    <label for="item22">
+                        <span class="item-title">Câmera/Smartphone</span>
+                        <span class="item-description">Para fotografar canvases preenchidos | Quantidade: 1 unidade</span>
+                    </label>
+                </div>
+
+                <div class="checklist-item">
+                    <input type="checkbox" id="item23" onchange="updateProgress()">
+                    <label for="item23">
+                        <span class="item-title">Cabos e Adaptadores</span>
+                        <span class="item-description">HDMI, USB-C, VGA (conforme necessário)</span>
+                    </label>
+                </div>
+            </div>
+
+            <!-- Disposição da Sala -->
+            <h2>🏢 Disposição da Sala (Prioridade: MÉDIA)</h2>
+            <div class="checklist-section">
+                <h3>Recomendações de Layout</h3>
+                <p>A sala deve ser organizada em formato de <strong>"U"</strong> para facilitar a colaboração e a visualização dos canvases.</p>
+                
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Elemento</th>
+                            <th>Posição</th>
+                            <th>Descrição</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Mesas</strong></td>
+                            <td>Formato "U"</td>
+                            <td>Mesas dispostas em U, com espaço aberto no centro para canvases</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Cadeiras</strong></td>
+                            <td>Ao redor das mesas</td>
+                            <td>8 cadeiras confortáveis com rodas (para mobilidade)</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Canvas</strong></td>
+                            <td>Paredes/Chão</td>
+                            <td>Fixados nas paredes ou no chão para fácil acesso</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Projetor</strong></td>
+                            <td>Frente da sala</td>
+                            <td>Projetando na tela/parede frontal</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Flipchart</strong></td>
+                            <td>Lateral</td>
+                            <td>Para anotações do facilitador durante a sessão</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <div class="checklist-item">
+                    <input type="checkbox" id="item24" onchange="updateProgress()">
+                    <label for="item24">
+                        <span class="item-title">Sala com Paredes Livres</span>
+                        <span class="item-description">Para afixar canvases | Mínimo: 3 paredes disponíveis</span>
+                    </label>
+                </div>
+
+                <div class="checklist-item">
+                    <input type="checkbox" id="item25" onchange="updateProgress()">
+                    <label for="item25">
+                        <span class="item-title">Espaço Aberto no Centro</span>
+                        <span class="item-description">Para dinâmicas em pé | Mínimo: 4m x 4m</span>
+                    </label>
+                </div>
+
+                <div class="checklist-item">
+                    <input type="checkbox" id="item26" onchange="updateProgress()">
+                    <label for="item26">
+                        <span class="item-title">Iluminação Adequada</span>
+                        <span class="item-description">Luz natural + artificial para conforto</span>
+                    </label>
+                </div>
+
+                <div class="checklist-item">
+                    <input type="checkbox" id="item27" onchange="updateProgress()">
+                    <label for="item27">
+                        <span class="item-title">Climatização</span>
+                        <span class="item-description">Temperatura confortável (20-22°C)</span>
+                    </label>
+                </div>
+            </div>
+
+            <!-- Materiais Digitais -->
+            <h2>💻 Materiais Digitais (Prioridade: ALTA)</h2>
+            <div class="checklist-section">
+                <div class="checklist-item">
+                    <input type="checkbox" id="item28" onchange="updateProgress()">
+                    <label for="item28">
+                        <span class="item-title">Apresentação de Slides</span>
+                        <span class="item-description">Arquivo: Construindo_o_Futuro_Integrado_da_Inovação_na_Cibra.pptx | Testado e pronto</span>
+                    </label>
+                </div>
+
+                <div class="checklist-item">
+                    <input type="checkbox" id="item29" onchange="updateProgress()">
+                    <label for="item29">
+                        <span class="item-title">Manual de Facilitação</span>
+                        <span class="item-description">Arquivo: manual_facilitacao.html | Impresso e em mãos</span>
+                    </label>
+                </div>
+
+                <div class="checklist-item">
+                    <input type="checkbox" id="item30" onchange="updateProgress()">
+                    <label for="item30">
+                        <span class="item-title">Guia de Pré-Trabalho</span>
+                        <span class="item-description">Arquivo: guia_pre_trabalho.html | Enviado aos participantes</span>
+                    </label>
+                </div>
+
+                <div class="checklist-item">
+                    <input type="checkbox" id="item31" onchange="updateProgress()">
+                    <label for="item31">
+                        <span class="item-title">Planejamento da Sessão</span>
+                        <span class="item-description">Arquivo: planejamento_sessao.html | Para referência</span>
+                    </label>
+                </div>
+
+                <div class="checklist-item">
+                    <input type="checkbox" id="item32" onchange="updateProgress()">
+                    <label for="item32">
+                        <span class="item-title">Templates de Canvas</span>
+                        <span class="item-description">Arquivo: templates_canvases.html | Para instruções</span>
+                    </label>
+                </div>
+
+                <div class="checklist-item">
+                    <input type="checkbox" id="item33" onchange="updateProgress()">
+                    <label for="item33">
+                        <span class="item-title">Portal Web</span>
+                        <span class="item-description">Arquivo: portal.html | Acesso centralizado a todos os materiais</span>
+                    </label>
+                </div>
+            </div>
+
+            <!-- Refeições e Bebidas -->
+            <h2>🍽️ Refeições e Bebidas (Prioridade: MÉDIA)</h2>
+            <div class="checklist-section">
+                <div class="checklist-item">
+                    <input type="checkbox" id="item34" onchange="updateProgress()">
+                    <label for="item34">
+                        <span class="item-title">Café da Manhã</span>
+                        <span class="item-description">Terça e Quarta-feira | Para 8 pessoas</span>
+                    </label>
+                </div>
+
+                <div class="checklist-item">
+                    <input type="checkbox" id="item35" onchange="updateProgress()">
+                    <label for="item35">
+                        <span class="item-title">Almoço</span>
+                        <span class="item-description">Segunda (leve), Terça e Quarta | Para 8 pessoas</span>
+                    </label>
+                </div>
+
+                <div class="checklist-item">
+                    <input type="checkbox" id="item36" onchange="updateProgress()">
+                    <label for="item36">
+                        <span class="item-title">Café da Tarde</span>
+                        <span class="item-description">Todos os dias | Para 8 pessoas</span>
+                    </label>
+                </div>
+
+                <div class="checklist-item">
+                    <input type="checkbox" id="item37" onchange="updateProgress()">
+                    <label for="item37">
+                        <span class="item-title">Água e Bebidas</span>
+                        <span class="item-description">Garrafas de água, café, chá, suco | Quantidade: 40 unidades</span>
+                    </label>
+                </div>
+
+                <div class="checklist-item">
+                    <input type="checkbox" id="item38" onchange="updateProgress()">
+                    <label for="item38">
+                        <span class="item-title">Lanches</span>
+                        <span class="item-description">Frutas, biscoitos, chocolates | Para 8 pessoas</span>
+                    </label>
+                </div>
+            </div>
+
+            <!-- Testes Pré-Reunião -->
+            <h2>✅ Testes Pré-Reunião (Prioridade: CRÍTICA)</h2>
+            <div class="checklist-section">
+                <p><strong>Realize estes testes 1 dia antes da sessão:</strong></p>
+
+                <div class="checklist-item">
+                    <input type="checkbox" id="item39" onchange="updateProgress()">
+                    <label for="item39">
+                        <span class="item-title">Teste de Projeção</span>
+                        <span class="item-description">Projetor + Tela + Notebook | Verificar resolução e cores</span>
+                    </label>
+                </div>
+
+                <div class="checklist-item">
+                    <input type="checkbox" id="item40" onchange="updateProgress()">
+                    <label for="item40">
+                        <span class="item-title">Teste de Som</span>
+                        <span class="item-description">Áudio do notebook + Sistema de som | Verificar volume</span>
+                    </label>
+                </div>
+
+                <div class="checklist-item">
+                    <input type="checkbox" id="item41" onchange="updateProgress()">
+                    <label for="item41">
+                        <span class="item-title">Teste de Conectividade</span>
+                        <span class="item-description">Wi-Fi da sala | Velocidade adequada para vídeos</span>
+                    </label>
+                </div>
+
+                <div class="checklist-item">
+                    <input type="checkbox" id="item42" onchange="updateProgress()">
+                    <label for="item42">
+                        <span class="item-title">Verificação de Cabos</span>
+                        <span class="item-description">Todos os cabos funcionando (HDMI, USB, etc.)</span>
+                    </label>
+                </div>
+
+                <div class="checklist-item">
+                    <input type="checkbox" id="item43" onchange="updateProgress()">
+                    <label for="item43">
+                        <span class="item-title">Teste de Apresentação</span>
+                        <span class="item-description">Rodar os slides do início ao fim | Verificar transições</span>
+                    </label>
+                </div>
+
+                <div class="checklist-item">
+                    <input type="checkbox" id="item44" onchange="updateProgress()">
+                    <label for="item44">
+                        <span class="item-title">Verificação da Sala</span>
+                        <span class="item-description">Layout, iluminação, climatização, limpeza</span>
+                    </label>
+                </div>
+            </div>
+
+            <!-- Ações Finais -->
+            <h2>🎯 Ações Finais</h2>
+            <div class="action-buttons">
+                <button class="btn btn-primary" onclick="printChecklist()">🖨️ Imprimir Checklist</button>
+                <button class="btn btn-secondary" onclick="resetChecklist()">🔄 Resetar Checklist</button>
+            </div>
+
+            <div class="highlight-box">
+                <strong>💡 Dica Final:</strong><br>
+                Imprima este checklist e distribua entre os responsáveis pela logística. Assim, ninguém esquece nada!
+            </div>
+
+            <div class="footer">
+                <p>Checklist de Materiais | Sessão de Design Thinking - Cibra | 4 Dias</p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Limpar dados de teste do checklist
+        Object.keys(localStorage).forEach(key => {
+            if (key.startsWith('checkbox_')) {
+                localStorage.removeItem(key);
+            }
+        });
+
+        // Verificar disponibilidade de localStorage
+        function isLocalStorageAvailable() {
+            try {
+                const test = '__localStorage_test__';
+                localStorage.setItem(test, test);
+                localStorage.removeItem(test);
+                return true;
+            } catch (e) {
+                console.warn('localStorage não disponível:', e);
+                return false;
+            }
+        }
+
+        // Função segura para acessar localStorage
+        function getCheckboxState(index) {
+            try {
+                if (!isLocalStorageAvailable()) return false;
+                return localStorage.getItem('checkbox_' + index) === 'true';
+            } catch (e) {
+                console.error('Erro ao ler checkbox state:', e);
+                return false;
+            }
+        }
+
+        // Função segura para salvar estado do checkbox
+        function setCheckboxState(index, value) {
+            try {
+                if (!isLocalStorageAvailable()) return false;
+                localStorage.setItem('checkbox_' + index, value);
+                return true;
+            } catch (e) {
+                console.error('Erro ao salvar checkbox state:', e);
+                if (e.name === 'QuotaExceededError') {
+                    console.warn('Espaço de armazenamento cheio');
+                }
+                return false;
+            }
+        }
+
+        function updateProgress() {
+            const checkboxes = document.querySelectorAll('input[type="checkbox"]');
+            const checked = document.querySelectorAll('input[type="checkbox"]:checked');
+            const percentage = Math.round((checked.length / checkboxes.length) * 100);
+            
+            const progressFill = document.getElementById('progressFill');
+            progressFill.style.width = percentage + '%';
+            progressFill.textContent = percentage + '%';
+        }
+
+        function printChecklist() {
+            window.print();
+        }
+
+        function resetChecklist() {
+            const checkboxes = document.querySelectorAll('input[type="checkbox"]');
+            checkboxes.forEach(checkbox => checkbox.checked = false);
+            updateProgress();
+            alert('Checklist resetado!');
+        }
+
+        // Salvar estado do checklist no localStorage
+        document.querySelectorAll('input[type="checkbox"]').forEach((checkbox, index) => {
+            checkbox.addEventListener('change', function() {
+                setCheckboxState(index, this.checked);
+                updateProgress();
+            });
+
+            // Restaurar estado salvo
+            if (getCheckboxState(index)) {
+                checkbox.checked = true;
+            }
+        });
+
+        // Atualizar progresso ao carregar
+        updateProgress();
+    </script>
+</body>
+</html>

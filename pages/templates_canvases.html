@@ -1,0 +1,583 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Templates de Canvas para a Sessão de Design Thinking. 7 ferramentas visuais para cocriação e alinhamento.">
+    <meta name="keywords" content="Canvas, Design Thinking, Ferramentas, Cibra">
+    <meta property="og:title" content="Templates de Canvas - Sessão de Design Thinking Cibra">
+    <meta property="og:description" content="Templates de Canvas para a Sessão de Design Thinking. 7 ferramentas visuais para cocriação e alinhamento.">
+    <meta property="og:type" content="website">
+    <meta name="robots" content="index, follow">
+    <meta name="theme-color" content="#407928">
+    <link rel="icon" type="image/png" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect fill='%23407928' width='100' height='100'/><text x='50' y='75' font-size='60' font-weight='bold' fill='%23B0D235' text-anchor='middle'>C</text></svg>">
+    <title>Templates de Canvas - Cibra</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --verde-cibra: #B0D235;
+            --verde-escuro: #407928;
+            --branco: #FFFFFF;
+            --cinza-claro: #F5F5F5;
+            --cinza-escuro: #333333;
+            --cinza-medio: #666666;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            background-color: var(--cinza-claro);
+            color: var(--cinza-escuro);
+            line-height: 1.8;
+        }
+
+        /* Header */
+        header {
+            background: linear-gradient(135deg, var(--verde-escuro) 0%, #2d5a1f 100%);
+            color: var(--branco);
+            padding: 20px 0;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .header-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .logo-section {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .logo-section img {
+            height: 35px;
+            width: auto;
+        }
+
+        .header-title h1 {
+            font-size: 20px;
+            font-weight: 700;
+            color: var(--branco);
+        }
+
+        .back-btn {
+            background: rgba(255,255,255,0.2);
+            border: 1px solid rgba(255,255,255,0.3);
+            color: var(--branco);
+            padding: 8px 16px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 13px;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            text-decoration: none;
+        }
+
+        .back-btn:hover {
+            background: var(--verde-cibra);
+            color: var(--verde-escuro);
+        }
+
+        /* Main Container */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        .content {
+            background: var(--branco);
+            border-radius: 8px;
+            padding: 40px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+        }
+
+        h1 {
+            color: var(--verde-escuro);
+            font-size: 32px;
+            margin-bottom: 10px;
+            font-weight: 700;
+        }
+
+        .subtitle {
+            color: var(--cinza-medio);
+            font-size: 14px;
+            margin-bottom: 30px;
+            padding-bottom: 20px;
+            border-bottom: 2px solid var(--cinza-claro);
+        }
+
+        h2 {
+            color: var(--verde-escuro);
+            font-size: 24px;
+            margin-top: 40px;
+            margin-bottom: 20px;
+            font-weight: 700;
+            border-left: 4px solid var(--verde-cibra);
+            padding-left: 15px;
+        }
+
+        h3 {
+            color: var(--verde-escuro);
+            font-size: 18px;
+            margin-top: 25px;
+            margin-bottom: 15px;
+            font-weight: 600;
+        }
+
+        p {
+            margin-bottom: 15px;
+            color: var(--cinza-medio);
+            line-height: 1.8;
+        }
+
+        .canvas-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+            margin: 30px 0;
+        }
+
+        .canvas-card {
+            background: linear-gradient(135deg, rgba(176, 210, 53, 0.05) 0%, rgba(64, 121, 40, 0.02) 100%);
+            border: 2px solid var(--verde-cibra);
+            border-radius: 8px;
+            padding: 25px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .canvas-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 16px rgba(64, 121, 40, 0.15);
+        }
+
+        .canvas-card h4 {
+            color: var(--verde-escuro);
+            font-size: 16px;
+            margin-bottom: 10px;
+            font-weight: 700;
+        }
+
+        .canvas-card .canvas-id {
+            display: inline-block;
+            background: var(--verde-cibra);
+            color: var(--verde-escuro);
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+
+        .canvas-card p {
+            font-size: 14px;
+            margin-bottom: 15px;
+        }
+
+        .canvas-details {
+            display: none;
+            margin-top: 20px;
+            padding-top: 20px;
+            border-top: 1px solid var(--verde-cibra);
+        }
+
+        .canvas-details.active {
+            display: block;
+        }
+
+        .detail-section {
+            margin-bottom: 15px;
+        }
+
+        .detail-section strong {
+            color: var(--verde-escuro);
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        .detail-section p {
+            margin: 0;
+            font-size: 13px;
+        }
+
+        .highlight-box {
+            background: linear-gradient(135deg, rgba(176, 210, 53, 0.1) 0%, rgba(64, 121, 40, 0.05) 100%);
+            border-left: 4px solid var(--verde-cibra);
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 4px;
+        }
+
+        .download-section {
+            background: var(--cinza-claro);
+            border: 2px dashed var(--verde-cibra);
+            padding: 30px;
+            border-radius: 8px;
+            text-align: center;
+            margin: 30px 0;
+        }
+
+        .download-section h3 {
+            margin-top: 0;
+        }
+
+        .download-btn {
+            display: inline-block;
+            background: var(--verde-cibra);
+            color: var(--verde-escuro);
+            padding: 12px 24px;
+            border-radius: 4px;
+            text-decoration: none;
+            font-weight: 600;
+            margin: 10px 5px;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+        }
+
+        .download-btn:hover {
+            background: var(--verde-escuro);
+            color: var(--branco);
+        }
+
+        ul, ol {
+            margin-left: 20px;
+            margin-bottom: 20px;
+            color: var(--cinza-medio);
+        }
+
+        li {
+            margin-bottom: 10px;
+            line-height: 1.8;
+        }
+
+        .footer {
+            margin-top: 60px;
+            padding-top: 20px;
+            border-top: 2px solid var(--cinza-claro);
+            text-align: center;
+            color: var(--cinza-medio);
+            font-size: 13px;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .header-container {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            .content {
+                padding: 25px;
+            }
+
+            h1 {
+                font-size: 24px;
+            }
+
+            h2 {
+                font-size: 20px;
+            }
+
+            .canvas-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-container">
+            <div class="logo-section">
+                <img src="../assets/LogoCibra-Branco-Horizontal-FundoTransparente.png" alt="Cibra Logo">
+                <div class="header-title">
+                    <h1>Templates de Canvas</h1>
+                </div>
+            </div>
+            <a href="../index.html" class="back-btn">← Voltar ao Início</a>
+        </div>
+    </header>
+
+    <div class="container">
+        <div class="content">
+            <h1>Templates de Canvas</h1>
+            <div class="subtitle">7 Canvas para a Sessão de Design Thinking - Instruções e Modelos</div>
+
+            <div class="highlight-box">
+                <strong>📋 Como usar os Canvas:</strong><br>
+                Cada canvas abaixo pode ser impresso em tamanho A0/A1 em cartolina ou desenhado em um flipchart. Clique em cada card para ver as instruções detalhadas de preenchimento.
+            </div>
+
+            <!-- Grid de Canvases -->
+            <div class="canvas-grid">
+                <!-- Canvas A1 -->
+                <div class="canvas-card" onclick="toggleDetails(this)">
+                    <div class="canvas-id">Canvas A1</div>
+                    <h4>Expectativa vs. Realidade</h4>
+                    <p>Mapear o gap entre a visão estratégica e a realidade operacional.</p>
+                    
+                    <div class="canvas-details">
+                        <div class="detail-section">
+                            <strong>🎯 Objetivo:</strong>
+                            <p>Identificar onde estamos hoje versus onde queremos estar, criando uma visão compartilhada do desafio.</p>
+                        </div>
+                        <div class="detail-section">
+                            <strong>⏱️ Tempo:</strong>
+                            <p>45 minutos</p>
+                        </div>
+                        <div class="detail-section">
+                            <strong>👥 Facilitação:</strong>
+                            <p>Divida o canvas em duas colunas: "Expectativa" (esquerda) e "Realidade" (direita). Peça ao grupo que liste elementos em cada coluna (processos, papéis, comunicação, etc.).</p>
+                        </div>
+                        <div class="detail-section">
+                            <strong>💡 Dica:</strong>
+                            <p>Use cores diferentes para cada coluna. Isso ajuda a visualizar os gaps rapidamente.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Canvas A2 -->
+                <div class="canvas-card" onclick="toggleDetails(this)">
+                    <div class="canvas-id">Canvas A2</div>
+                    <h4>Mapa das Dores</h4>
+                    <p>Identificar e agrupar as principais dores, frustrações e gargalos.</p>
+                    
+                    <div class="canvas-details">
+                        <div class="detail-section">
+                            <strong>🎯 Objetivo:</strong>
+                            <p>Consolidar os problemas identificados no Canvas A1 em categorias temáticas para facilitar a priorização.</p>
+                        </div>
+                        <div class="detail-section">
+                            <strong>⏱️ Tempo:</strong>
+                            <p>60 minutos</p>
+                        </div>
+                        <div class="detail-section">
+                            <strong>👥 Facilitação:</strong>
+                            <p>Use post-its para cada dor. Agrupe por tema (ex: Comunicação, Processo, Papéis). Depois, vote para priorizar os top 5.</p>
+                        </div>
+                        <div class="detail-section">
+                            <strong>💡 Dica:</strong>
+                            <p>Pergunte "Por quê?" 3 vezes para cada dor. Isso ajuda a identificar a raiz do problema.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Canvas A3 -->
+                <div class="canvas-card" onclick="toggleDetails(this)">
+                    <div class="canvas-id">Canvas A3</div>
+                    <h4>Mapa de Empatia</h4>
+                    <p>Aprofundar a compreensão sobre necessidades, dores e desejos de cada área.</p>
+                    
+                    <div class="canvas-details">
+                        <div class="detail-section">
+                            <strong>🎯 Objetivo:</strong>
+                            <p>Entender a perspectiva de cada área (Estratégia, PMO, Novos Negócios, Produtos) para desenhar um processo que atenda a todos.</p>
+                        </div>
+                        <div class="detail-section">
+                            <strong>⏱️ Tempo:</strong>
+                            <p>90 minutos (15-20 min por área)</p>
+                        </div>
+                        <div class="detail-section">
+                            <strong>👥 Facilitação:</strong>
+                            <p>Crie um mapa para cada área com 4 quadrantes: O que Vê? O que Ouve? O que Sente? O que Faz?</p>
+                        </div>
+                        <div class="detail-section">
+                            <strong>💡 Dica:</strong>
+                            <p>Peça ao líder de cada área para preencher o mapa. Isso garante autenticidade.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Canvas A4 -->
+                <div class="canvas-card" onclick="toggleDetails(this)">
+                    <div class="canvas-id">Canvas A4</div>
+                    <h4>Matriz RACI</h4>
+                    <p>Definir papéis (Responsável, Aprovador, Consultado, Informado) para cada atividade.</p>
+                    
+                    <div class="canvas-details">
+                        <div class="detail-section">
+                            <strong>🎯 Objetivo:</strong>
+                            <p>Eliminar ambiguidades sobre quem faz o quê, quem aprova e quem precisa ser consultado.</p>
+                        </div>
+                        <div class="detail-section">
+                            <strong>⏱️ Tempo:</strong>
+                            <p>120 minutos</p>
+                        </div>
+                        <div class="detail-section">
+                            <strong>👥 Facilitação:</strong>
+                            <p>Crie uma tabela com atividades nas linhas e áreas nas colunas. Preencha com R, A, C, I.</p>
+                        </div>
+                        <div class="detail-section">
+                            <strong>💡 Dica:</strong>
+                            <p>Cada atividade deve ter apenas 1 R (Responsável). Se houver múltiplos, o processo ainda está confuso.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Canvas A5 -->
+                <div class="canvas-card" onclick="toggleDetails(this)">
+                    <div class="canvas-id">Canvas A5</div>
+                    <h4>Fluxo Ponta a Ponta</h4>
+                    <p>Cocriar o novo processo integrado, mapeando etapas e interações.</p>
+                    
+                    <div class="canvas-details">
+                        <div class="detail-section">
+                            <strong>🎯 Objetivo:</strong>
+                            <p>Desenhar o novo processo de forma visual, mostrando como as áreas interagem do início ao fim.</p>
+                        </div>
+                        <div class="detail-section">
+                            <strong>⏱️ Tempo:</strong>
+                            <p>180 minutos (dividido em 2 sessões)</p>
+                        </div>
+                        <div class="detail-section">
+                            <strong>👥 Facilitação:</strong>
+                            <p>Use swimlanes (uma linha por área). Desenhe caixas para atividades e setas para fluxo. Inclua pontos de decisão.</p>
+                        </div>
+                        <div class="detail-section">
+                            <strong>💡 Dica:</strong>
+                            <p>Comece com a "Happy Path" (cenário ideal). Depois adicione exceções.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Canvas A6 -->
+                <div class="canvas-card" onclick="toggleDetails(this)">
+                    <div class="canvas-id">Canvas A6</div>
+                    <h4>Governança</h4>
+                    <p>Estruturar comitês, ritmo de reuniões, indicadores e critérios de priorização.</p>
+                    
+                    <div class="canvas-details">
+                        <div class="detail-section">
+                            <strong>🎯 Objetivo:</strong>
+                            <p>Definir como o novo processo será monitorado, ajustado e melhorado continuamente.</p>
+                        </div>
+                        <div class="detail-section">
+                            <strong>⏱️ Tempo:</strong>
+                            <p>90 minutos</p>
+                        </div>
+                        <div class="detail-section">
+                            <strong>👥 Facilitação:</strong>
+                            <p>Desenhe 4 seções: Comitês (quem governa?), Ritmo (quando nos reunimos?), KPIs (como medimos?), Critérios (como priorizamos?).</p>
+                        </div>
+                        <div class="detail-section">
+                            <strong>💡 Dica:</strong>
+                            <p>Defina claramente o escopo de cada comitê. Evite sobreposição de responsabilidades.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Canvas A7 -->
+                <div class="canvas-card" onclick="toggleDetails(this)">
+                    <div class="canvas-id">Canvas A7</div>
+                    <h4>Como Podemos?</h4>
+                    <p>Transformar problemas em oportunidades e gerar soluções criativas.</p>
+                    
+                    <div class="canvas-details">
+                        <div class="detail-section">
+                            <strong>🎯 Objetivo:</strong>
+                            <p>Reframing dos problemas como perguntas abertas para estimular criatividade e inovação.</p>
+                        </div>
+                        <div class="detail-section">
+                            <strong>⏱️ Tempo:</strong>
+                            <p>90 minutos</p>
+                        </div>
+                        <div class="detail-section">
+                            <strong>👥 Facilitação:</strong>
+                            <p>Pegue cada dor do Canvas A2 e reescreva como "Como Podemos...?". Depois, gere ideias em brainstorm.</p>
+                        </div>
+                        <div class="detail-section">
+                            <strong>💡 Dica:</strong>
+                            <p>Não critique ideias durante o brainstorm. Quantidade antes de qualidade. Avalie depois.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Grid de Canvas -->
+            <h2>📥 Download dos Canvas</h2>
+            <div class="download-section">
+                <h3>Imagens de Alta Resolução para Impressão</h3>
+                <p>Clique nos botões abaixo para baixar as imagens dos canvases em alta resolução (A0/A1). Recomenda-se imprimir em cartolina 180g.</p>
+                <br>
+                <button class="download-btn" onclick="window.open('../assets/canvas_a1_expectativa_realidade.png', '_blank')">📥 Canvas A1</button>
+                <button class="download-btn" onclick="window.open('../assets/canvas_a2_mapa_dores.png', '_blank')">📥 Canvas A2</button>
+                <button class="download-btn" onclick="window.open('../assets/canvas_a3_mapa_empatia.png', '_blank')">📥 Canvas A3</button>
+                <button class="download-btn" onclick="window.open('../assets/canvas_a4_matriz_raci.png', '_blank')">📥 Canvas A4</button>
+                <button class="download-btn" onclick="window.open('../assets/canvas_a5_fluxo_ponta_ponta.png', '_blank')">📥 Canvas A5</button>
+                <button class="download-btn" onclick="window.open('../assets/canvas_a6_governanca.png', '_blank')">📥 Canvas A6</button>
+                <button class="download-btn" onclick="window.open('../assets/canvas_a7_como_podemos.png', '_blank')">📥 Canvas A7</button>
+            </div>
+
+            <!-- Instruções Gerais -->
+            <h2>📖 Instruções Gerais para Preenchimento</h2>
+            <ol>
+                <li><strong>Prepare o Espaço:</strong> Imprima o canvas em tamanho grande (A0 ou A1) ou desenhe em um flipchart. Certifique-se de que todos possam ver e contribuir.</li>
+                <li><strong>Forneça Materiais:</strong> Post-its em cores variadas, canetas marcador (Sharpie), fita crepe para fixar post-its.</li>
+                <li><strong>Explique o Objetivo:</strong> Antes de começar, explique o que é o canvas e por que é importante.</li>
+                <li><strong>Facilite a Discussão:</strong> Faça perguntas abertas para estimular o pensamento. Não dite respostas.</li>
+                <li><strong>Agrupe e Priorize:</strong> Após preencher, agrupe elementos similares e priorize os mais importantes.</li>
+                <li><strong>Documente:</strong> Tire fotos do canvas preenchido. Isso serve como registro e referência futura.</li>
+                <li><strong>Sintetize:</strong> Após a sessão, transcreva os aprendizados para um documento digital.</li>
+            </ol>
+
+            <!-- Dicas de Facilitação -->
+            <h2>💡 Dicas de Facilitação</h2>
+            <div class="highlight-box">
+                <strong>✅ Faça:</strong>
+                <ul>
+                    <li>Escute ativamente. Não interrompa.</li>
+                    <li>Valide todas as contribuições. Cada perspectiva é valiosa.</li>
+                    <li>Use linguagem simples. Evite jargão.</li>
+                    <li>Mantenha o ritmo. Não deixe uma discussão se estender demais.</li>
+                    <li>Celebre as ideias criativas. Isso estimula mais participação.</li>
+                </ul>
+            </div>
+
+            <div class="highlight-box">
+                <strong>❌ Evite:</strong>
+                <ul>
+                    <li>Criticar ideias durante o brainstorm.</li>
+                    <li>Deixar uma pessoa dominar a discussão.</li>
+                    <li>Focar em problemas técnicos. Mantenha o foco no processo.</li>
+                    <li>Pular etapas. Cada canvas constrói sobre o anterior.</li>
+                    <li>Deixar ambiguidades sem resolver. Sempre esclareça.</li>
+                </ul>
+            </div>
+
+            <div class="footer">
+                <p>Templates de Canvas | Sessão de Design Thinking - Cibra | 4 Dias</p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function toggleDetails(element) {
+            const details = element.querySelector('.canvas-details');
+            const allDetails = document.querySelectorAll('.canvas-details');
+            
+            // Fechar todos os outros
+            allDetails.forEach(d => {
+                if (d !== details) {
+                    d.classList.remove('active');
+                }
+            });
+            
+            // Toggle o atual
+            details.classList.toggle('active');
+        }
+    </script>
+</body>
+</html>

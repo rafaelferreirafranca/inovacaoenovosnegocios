@@ -1,0 +1,912 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Portal da Sessão de Design Thinking. Acesse dashboard, calendário, participantes e materiais.">
+    <meta name="keywords" content="Portal, Dashboard, Design Thinking, Cibra">
+    <meta property="og:title" content="Portal - Sessão de Design Thinking Cibra">
+    <meta property="og:description" content="Portal da Sessão de Design Thinking. Acesse dashboard, calendário, participantes e materiais.">
+    <meta property="og:type" content="website">
+    <meta name="robots" content="index, follow">
+    <meta name="theme-color" content="#407928">
+    <link rel="icon" type="image/png" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect fill='%23407928' width='100' height='100'/><text x='50' y='75' font-size='60' font-weight='bold' fill='%23B0D235' text-anchor='middle'>C</text></svg>">
+    <title>Portal - Construindo o Futuro Integrado da Inovação na Cibra</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --verde-cibra: #B0D235;
+            --verde-escuro: #407928;
+            --branco: #FFFFFF;
+            --cinza-claro: #F5F5F5;
+            --cinza-escuro: #333333;
+            --cinza-medio: #666666;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            background-color: var(--cinza-claro);
+            color: var(--cinza-escuro);
+            line-height: 1.6;
+        }
+
+        /* Header */
+        header {
+            background: linear-gradient(135deg, var(--verde-escuro) 0%, #2d5a1f 100%);
+            color: var(--branco);
+            padding: 20px 0;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .header-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .logo-section {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .logo-section img {
+            height: 40px;
+            width: auto;
+        }
+
+        .header-title h1 {
+            font-size: 24px;
+            font-weight: 700;
+            letter-spacing: -0.5px;
+            color: var(--branco);
+        }
+
+        .header-title p {
+            font-size: 12px;
+            opacity: 0.9;
+            margin-top: 2px;
+            color: var(--branco);
+        }
+
+        /* Navigation */
+        nav {
+            display: flex;
+            gap: 10px;
+        }
+
+        nav button {
+            background: rgba(255,255,255,0.2);
+            border: 1px solid rgba(255,255,255,0.3);
+            color: var(--branco);
+            padding: 8px 16px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 13px;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+
+        nav button:hover,
+        nav button.active {
+            background: var(--verde-cibra);
+            color: var(--verde-escuro);
+            border-color: var(--verde-cibra);
+        }
+
+        /* Main Container */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        /* Sections */
+        .section {
+            display: none;
+            animation: fadeIn 0.3s ease;
+        }
+
+        .section.active {
+            display: block;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        /* Dashboard */
+        .dashboard-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+
+        .card {
+            background: var(--branco);
+            border-radius: 8px;
+            padding: 24px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+            border-left: 4px solid var(--verde-cibra);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 4px 16px rgba(0,0,0,0.12);
+        }
+
+        .card h3 {
+            color: var(--verde-escuro);
+            font-size: 18px;
+            margin-bottom: 12px;
+            font-weight: 600;
+        }
+
+        .card p {
+            color: var(--cinza-medio);
+            font-size: 14px;
+            line-height: 1.6;
+            margin-bottom: 16px;
+        }
+
+        .card-link {
+            display: inline-block;
+            color: var(--verde-cibra);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 13px;
+            transition: color 0.3s ease;
+        }
+
+        .card-link:hover {
+            color: var(--verde-escuro);
+        }
+
+        /* Calendar */
+        .calendar-container {
+            background: var(--branco);
+            border-radius: 8px;
+            padding: 30px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+        }
+
+        .day-section {
+            margin-bottom: 40px;
+            border-bottom: 2px solid var(--cinza-claro);
+            padding-bottom: 30px;
+        }
+
+        .day-section:last-child {
+            border-bottom: none;
+        }
+
+        .day-title {
+            font-size: 20px;
+            font-weight: 700;
+            color: var(--verde-escuro);
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .day-badge {
+            background: var(--verde-cibra);
+            color: var(--verde-escuro);
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 600;
+        }
+
+        .activity {
+            background: var(--cinza-claro);
+            border-left: 4px solid var(--verde-cibra);
+            padding: 16px;
+            margin-bottom: 12px;
+            border-radius: 4px;
+        }
+
+        .activity-time {
+            font-weight: 700;
+            color: var(--verde-escuro);
+            font-size: 13px;
+            margin-bottom: 6px;
+        }
+
+        .activity-title {
+            font-weight: 600;
+            color: var(--cinza-escuro);
+            margin-bottom: 8px;
+        }
+
+        .activity-description {
+            font-size: 13px;
+            color: var(--cinza-medio);
+            margin-bottom: 8px;
+        }
+
+        .activity-canvas {
+            display: inline-block;
+            background: var(--verde-cibra);
+            color: var(--verde-escuro);
+            padding: 4px 10px;
+            border-radius: 4px;
+            font-size: 11px;
+            font-weight: 600;
+        }
+
+        /* Participants */
+        .participants-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+
+        .participant-card {
+            background: var(--branco);
+            border-radius: 8px;
+            padding: 20px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+            border-top: 3px solid var(--verde-cibra);
+        }
+
+        .participant-name {
+            font-weight: 700;
+            color: var(--verde-escuro);
+            margin-bottom: 6px;
+            font-size: 15px;
+        }
+
+        .participant-role {
+            color: var(--cinza-medio);
+            font-size: 13px;
+        }
+
+        /* FAQ */
+        .faq-container {
+            background: var(--branco);
+            border-radius: 8px;
+            padding: 30px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+        }
+
+        .faq-item {
+            margin-bottom: 24px;
+            padding-bottom: 24px;
+            border-bottom: 1px solid var(--cinza-claro);
+        }
+
+        .faq-item:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+
+        .faq-question {
+            font-weight: 700;
+            color: var(--verde-escuro);
+            margin-bottom: 12px;
+            font-size: 15px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .faq-question::before {
+            content: "▶";
+            font-size: 12px;
+            transition: transform 0.3s ease;
+        }
+
+        .faq-answer {
+            color: var(--cinza-medio);
+            font-size: 14px;
+            line-height: 1.7;
+            display: none;
+        }
+
+        .faq-item.active .faq-answer {
+            display: block;
+        }
+
+        .faq-item.active .faq-question::before {
+            transform: rotate(90deg);
+        }
+
+        /* Materials Section */
+        .materials-section {
+            background: var(--branco);
+            border-radius: 8px;
+            padding: 30px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+        }
+
+        .materials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .material-item {
+            background: var(--cinza-claro);
+            padding: 20px;
+            border-radius: 8px;
+            text-align: center;
+            border: 2px solid transparent;
+            transition: all 0.3s ease;
+        }
+
+        .material-item:hover {
+            border-color: var(--verde-cibra);
+            background: var(--branco);
+        }
+
+        .material-icon {
+            font-size: 32px;
+            margin-bottom: 12px;
+        }
+
+        .material-name {
+            font-weight: 600;
+            color: var(--verde-escuro);
+            font-size: 14px;
+        }
+
+        /* Recap Sections */
+        .recap-container {
+            background: var(--branco);
+            border-radius: 8px;
+            padding: 30px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+        }
+
+        .recap-section {
+            margin-bottom: 30px;
+        }
+
+        .recap-section h3 {
+            color: var(--verde-escuro);
+            font-size: 16px;
+            font-weight: 700;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .recap-list {
+            list-style: none;
+        }
+
+        .recap-list li {
+            padding: 10px 0;
+            padding-left: 24px;
+            position: relative;
+            color: var(--cinza-medio);
+            font-size: 14px;
+        }
+
+        .recap-list li::before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: var(--verde-cibra);
+            font-weight: 700;
+        }
+
+        /* Closing Message */
+        .closing-message {
+            background: linear-gradient(135deg, var(--verde-escuro) 0%, #2d5a1f 100%);
+            color: var(--branco);
+            border-radius: 8px;
+            padding: 40px;
+            text-align: center;
+            margin-top: 40px;
+        }
+
+        .closing-message h2 {
+            font-size: 28px;
+            margin-bottom: 16px;
+        }
+
+        .closing-message p {
+            font-size: 16px;
+            opacity: 0.95;
+            margin-bottom: 20px;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .header-container {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            nav {
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            nav button {
+                flex: 1;
+                min-width: 100px;
+            }
+
+            .dashboard-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .day-title {
+                font-size: 18px;
+            }
+
+            .closing-message {
+                padding: 30px 20px;
+            }
+
+            .closing-message h2 {
+                font-size: 24px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-container">
+            <div class="logo-section">
+                <img src="../assets/LogoCibra-Branco-Horizontal-FundoTransparente.png" alt="Cibra Logo">
+                <div class="header-title">
+                    <h1>Portal da Sessão</h1>
+                    <p>Construindo o Futuro Integrado da Inovação</p>
+                </div>
+            </div>
+            <a href="../index.html" class="back-btn">← Voltar ao Início</a>
+        </div>
+    </header>
+
+    <div class="container">
+        <!-- Dashboard -->
+        <div id="dashboard" class="section active">
+            <h2 style="color: var(--verde-escuro); font-size: 24px; margin-bottom: 30px; font-weight: 700;">Bem-vindo ao Portal</h2>
+            
+            <div class="dashboard-grid">
+                <div class="card">
+                    <h3>📅 Agenda Detalhada</h3>
+                    <p>Cronograma completo de 2,5 dias com horários, atividades e canvases.</p>
+                    <a href="#" class="card-link" onclick="showSection('calendario'); return false;">Ver Calendário →</a>
+                </div>
+
+                <div class="card">
+                    <h3>👥 Participantes</h3>
+                    <p>Conheça os 7 participantes e seus papéis nesta jornada colaborativa.</p>
+                    <a href="#" class="card-link" onclick="showSection('participantes'); return false;">Ver Participantes →</a>
+                </div>
+
+                <div class="card">
+                    <h3>📚 Materiais</h3>
+                    <p>Documentos, canvases e recursos para a sessão de design thinking.</p>
+                    <a href="#" class="card-link" onclick="showSection('materiais'); return false;">Acessar Materiais →</a>
+                </div>
+
+                <div class="card">
+                    <h3>❓ Dúvidas Frequentes</h3>
+                    <p>Respostas para as perguntas mais comuns sobre a sessão.</p>
+                    <a href="#" class="card-link" onclick="showSection('faq'); return false;">Ver FAQ →</a>
+                </div>
+
+                <div class="card">
+                    <h3>🎯 Objetivo Final</h3>
+                    <p>Sair da reunião com o novo processo organizado, papéis claros e governança definida.</p>
+                </div>
+
+                <div class="card">
+                    <h3>🚀 Metodologia</h3>
+                    <p>Duplo Diamante: Descoberta → Definição → Desenvolvimento → Entrega.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Calendário -->
+        <div id="calendario" class="section">
+            <h2 style="color: var(--verde-escuro); font-size: 24px; margin-bottom: 30px; font-weight: 700;">Agenda Detalhada - 3 Dias</h2>
+            
+            <div class="calendar-container">
+                <!-- Segunda-feira -->
+                <div class="day-section">
+                    <div class="day-title">
+                        <span class="day-badge">SEGUNDA-FEIRA</span>
+                        02 de Fevereiro - 13:30 às 17:00
+                    </div>
+
+                    <div class="activity">
+                        <div class="activity-time">13:30 - 14:30</div>
+                        <div class="activity-title">Abertura e Contextualização</div>
+                        <div class="activity-description">Apresentação da estratégia Cibra, desafio integrado e metodologia do Duplo Diamante.</div>
+                        <div class="activity-canvas">CONTEXTO</div>
+                    </div>
+
+                    <div class="activity">
+                        <div class="activity-time">14:30 - 15:00</div>
+                        <div class="activity-title">Mapa das Dores</div>
+                        <div class="activity-description">Identificar gargalos e frustrações no processo atual.</div>
+                        <div class="activity-canvas">CANVAS A2</div>
+                    </div>
+
+                    <div class="activity">
+                        <div class="activity-time">15:00 - 16:30</div>
+                        <div class="activity-title">Mapa de Empatia</div>
+                        <div class="activity-description">Aprofundar necessidades e perspectivas de cada área.</div>
+                        <div class="activity-canvas">CANVAS A3</div>
+                    </div>
+
+                    <div class="activity">
+                        <div class="activity-time">16:30 - 17:00</div>
+                        <div class="activity-title">Recap do Dia 1</div>
+                        <div class="activity-description">Síntese das dores identificadas e preparação para o dia 2.</div>
+                    </div>
+                </div>
+
+                <!-- Terça-feira -->
+                <div class="day-section">
+                    <div class="day-title">
+                        <span class="day-badge">TERÇA-FEIRA</span>
+                        03 de Fevereiro - 08:30 às 17:00
+                    </div>
+
+                    <div class="activity">
+                        <div class="activity-time">08:30 - 09:30</div>
+                        <div class="activity-title">Abertura do Dia 2</div>
+                        <div class="activity-description">Recapitulação do dia anterior e definição de objetivos.</div>
+                    </div>
+
+                    <div class="activity">
+                        <div class="activity-time">09:30 - 11:00</div>
+                        <div class="activity-title">Como Podemos? (Ideação)</div>
+                        <div class="activity-description">Transformar problemas em oportunidades e gerar soluções criativas.</div>
+                        <div class="activity-canvas">CANVAS A7</div>
+                    </div>
+
+                    <div class="activity">
+                        <div class="activity-time">11:00 - 12:30</div>
+                        <div class="activity-title">Fluxo Ponta a Ponta 1.0</div>
+                        <div class="activity-description">Cocriar o novo fluxo integrado entre as áreas.</div>
+                        <div class="activity-canvas">CANVAS A5</div>
+                    </div>
+
+                    <div class="activity">
+                        <div class="activity-time">13:30 - 15:00</div>
+                        <div class="activity-title">Mapa de Empatia (Continuação)</div>
+                        <div class="activity-description">Aprofundar necessidades das áreas no novo fluxo.</div>
+                        <div class="activity-canvas">CANVAS A3</div>
+                    </div>
+
+                    <div class="activity">
+                        <div class="activity-time">15:00 - 16:30</div>
+                        <div class="activity-title">Como Podemos? (Continuação)</div>
+                        <div class="activity-description">Refinar ideias e definir critérios de sucesso.</div>
+                        <div class="activity-canvas">CANVAS A7</div>
+                    </div>
+
+                    <div class="activity">
+                        <div class="activity-time">16:30 - 17:00</div>
+                        <div class="activity-title">Recap do Dia 2</div>
+                        <div class="activity-description">Síntese das ideias e preparação para o dia final.</div>
+                    </div>
+                </div>
+
+                <!-- Quarta-feira -->
+                <div class="day-section">
+                    <div class="day-title">
+                        <span class="day-badge">QUARTA-FEIRA</span>
+                        04 de Fevereiro - 08:30 às 17:00
+                    </div>
+
+                    <div class="activity">
+                        <div class="activity-time">08:30 - 09:00</div>
+                        <div class="activity-title">Abertura do Dia 3</div>
+                        <div class="activity-description">Objetivos finais e foco na entrega.</div>
+                    </div>
+
+                    <div class="activity">
+                        <div class="activity-time">09:00 - 10:30</div>
+                        <div class="activity-title">Fluxo Ponta a Ponta (Refinamento)</div>
+                        <div class="activity-description">Detalhar o novo fluxo integrado com tempos e movimentos.</div>
+                        <div class="activity-canvas">CANVAS A5</div>
+                    </div>
+
+                    <div class="activity">
+                        <div class="activity-time">11:00 - 12:30</div>
+                        <div class="activity-title">Matriz RACI</div>
+                        <div class="activity-description">Definir papéis e responsabilidades claros para cada atividade.</div>
+                        <div class="activity-canvas">CANVAS A4</div>
+                    </div>
+
+                    <div class="activity">
+                        <div class="activity-time">13:30 - 15:00</div>
+                        <div class="activity-title">Desenho da Governança</div>
+                        <div class="activity-description">Estruturar comitês, ritmo de reuniões e KPIs.</div>
+                        <div class="activity-canvas">CANVAS A6</div>
+                    </div>
+
+                    <div class="activity">
+                        <div class="activity-time">15:00 - 16:30</div>
+                        <div class="activity-title">Validação e Plano de Ação</div>
+                        <div class="activity-description">Validar o novo processo e definir próximos passos.</div>
+                    </div>
+
+                    <div class="activity">
+                        <div class="activity-time">16:30 - 17:00</div>
+                        <div class="activity-title">Encerramento</div>
+                        <div class="activity-description">Celebração, comprometimento e próximos passos.</div>
+                    </div>
+                </div>
+
+                <!-- Quinta-feira -->
+                <div class="day-section">
+                    <div class="day-title">
+                        <span class="day-badge">QUINTA-FEIRA</span>
+                        06 de Fevereiro - 08:30 às 17:30
+                    </div>
+
+                    <div class="activity">
+                        <div class="activity-time">08:30 - 11:00</div>
+                        <div class="activity-title">Visita à FEGA (Fazenda Experimental)</div>
+                        <div class="activity-description">Conhecer a pesquisa agronômica aplicada e as inovações em campo.</div>
+                        <div class="activity-canvas">VISITA TÉCNICA</div>
+                    </div>
+
+                    <div class="activity">
+                        <div class="activity-time">11:00 - 11:45</div>
+                        <div class="activity-title">Deslocamento até a PUCPR</div>
+                        <div class="activity-description">Transporte para a próxima parada do roteiro.</div>
+                    </div>
+
+                    <div class="activity">
+                        <div class="activity-time">12:00 - 13:30</div>
+                        <div class="activity-title">Intervalo para Almoço</div>
+                        <div class="activity-description">Repouso e integração informal dos participantes.</div>
+                    </div>
+
+                    <div class="activity">
+                        <div class="activity-time">13:30 - 14:30</div>
+                        <div class="activity-title">Visita ao Centro de Realidade Estendida (CRE)</div>
+                        <div class="activity-description">Conhecer tecnologias de VR/AR para inovação e prototipagem.</div>
+                        <div class="activity-canvas">VISITA TÉCNICA</div>
+                    </div>
+
+                    <div class="activity">
+                        <div class="activity-time">14:45 - 15:30</div>
+                        <div class="activity-title">Tour Hotmilk</div>
+                        <div class="activity-description">Explorar o ecossistema de inovação e startups.</div>
+                        <div class="activity-canvas">VISITA TÉCNICA</div>
+                    </div>
+
+                    <div class="activity">
+                        <div class="activity-time">15:30 - 16:00</div>
+                        <div class="activity-title">Núcleo de Inovação Corporativa (NIC) HOTMILK</div>
+                        <div class="activity-description">Entender processos de inovação corporativa e colaboração.</div>
+                        <div class="activity-canvas">VISITA TÉCNICA</div>
+                    </div>
+
+                    <div class="activity">
+                        <div class="activity-time">16:00 - 17:00</div>
+                        <div class="activity-title">Centro Integrado de Soluções em Inteligência Artificial (CisIA)</div>
+                        <div class="activity-description">Explorar aplicações de IA em negócios e transformação digital.</div>
+                        <div class="activity-canvas">VISITA TÉCNICA</div>
+                    </div>
+
+                    <div class="activity">
+                        <div class="activity-time">17:00 - 17:30</div>
+                        <div class="activity-title">Conclusão e Reflexões Finais</div>
+                        <div class="activity-description">Consolidar aprendizados das visitas e próximos passos.</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Participantes -->
+        <div id="participantes" class="section">
+            <h2 style="color: var(--verde-escuro); font-size: 24px; margin-bottom: 30px; font-weight: 700;">Participantes</h2>
+            
+            <div class="participants-grid">
+                <div class="participant-card">
+                    <div class="participant-name">Alexandre Jahn</div>
+                    <div class="participant-role">Diretor de Marketing e Novos Produtos</div>
+                </div>
+
+                <div class="participant-card">
+                    <div class="participant-name">Rodrigo Conor</div>
+                    <div class="participant-role">Gerente de Novos Negócios e Inovação Aberta</div>
+                </div>
+
+                <div class="participant-card">
+                    <div class="participant-name">Pedro Filho</div>
+                    <div class="participant-role">Analista de Inovação Aberta</div>
+                </div>
+
+                <div class="participant-card">
+                    <div class="participant-name">Pedro Mattos</div>
+                    <div class="participant-role">Gerente de Novos Produtos</div>
+                </div>
+
+                <div class="participant-card">
+                    <div class="participant-name">Valter Assami</div>
+                    <div class="participant-role">Gerente de P&D</div>
+                </div>
+
+                <div class="participant-card">
+                    <div class="participant-name">Fernando Neto</div>
+                    <div class="participant-role">Gerente de Planejamento Estratégico e PMO</div>
+                </div>
+
+                <div class="participant-card">
+                    <div class="participant-name">Caio Franco</div>
+                    <div class="participant-role">Coordenador de PMO</div>
+                </div>
+
+                <div class="participant-card">
+                    <div class="participant-name">Rafael França</div>
+                    <div class="participant-role">Diretor de Novos Negócios e Inovação</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Materiais -->
+        <div id="materiais" class="section">
+            <h2 style="color: var(--verde-escuro); font-size: 24px; margin-bottom: 30px; font-weight: 700;">Materiais e Recursos</h2>
+            
+            <div class="materials-section">
+                <h3 style="color: var(--verde-escuro); margin-bottom: 20px;">Documentos de Apoio</h3>
+                <div class="materials-grid">
+                    <div class="material-item">
+                        <div class="material-icon">📋</div>
+                        <div class="material-name">Manual de Facilitação</div>
+                    </div>
+                    <div class="material-item">
+                        <div class="material-icon">🎯</div>
+                        <div class="material-name">Guia de Pré-Trabalho</div>
+                    </div>
+                    <div class="material-item">
+                        <div class="material-icon">📊</div>
+                        <div class="material-name">Planejamento da Sessão</div>
+                    </div>
+                    <div class="material-item">
+                        <div class="material-icon">🗂️</div>
+                        <div class="material-name">Templates de Canvas</div>
+                    </div>
+                    <div class="material-item">
+                        <div class="material-icon">✅</div>
+                        <div class="material-name">Checklist de Materiais</div>
+                    </div>
+                </div>
+
+                <h3 style="color: var(--verde-escuro); margin-top: 40px; margin-bottom: 20px;">Canvas para Impressão</h3>
+                <div class="materials-grid">
+                    <div class="material-item">
+                        <div class="material-icon">A1</div>
+                        <div class="material-name">Expectativa vs. Realidade</div>
+                    </div>
+                    <div class="material-item">
+                        <div class="material-icon">A2</div>
+                        <div class="material-name">Mapa das Dores</div>
+                    </div>
+                    <div class="material-item">
+                        <div class="material-icon">A3</div>
+                        <div class="material-name">Mapa de Empatia</div>
+                    </div>
+                    <div class="material-item">
+                        <div class="material-icon">A4</div>
+                        <div class="material-name">Matriz RACI</div>
+                    </div>
+                    <div class="material-item">
+                        <div class="material-icon">A5</div>
+                        <div class="material-name">Fluxo Ponta a Ponta</div>
+                    </div>
+                    <div class="material-item">
+                        <div class="material-icon">A6</div>
+                        <div class="material-name">Governança</div>
+                    </div>
+                    <div class="material-item">
+                        <div class="material-icon">A7</div>
+                        <div class="material-name">Como Podemos?</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- FAQ -->
+        <div id="faq" class="section">
+            <h2 style="color: var(--verde-escuro); font-size: 24px; margin-bottom: 30px; font-weight: 700;">Perguntas Frequentes</h2>
+            
+            <div class="faq-container">
+                <div class="faq-item">
+                    <div class="faq-question">O que é o Duplo Diamante?</div>
+                    <div class="faq-answer">O Duplo Diamante é uma metodologia de design thinking que divide o processo em 4 fases: Descoberta (divergência), Definição (convergência), Desenvolvimento (divergência) e Entrega (convergência). Cada fase tem um objetivo específico e usa ferramentas diferentes para gerar insights e soluções.</div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">Qual é o objetivo final da sessão?</div>
+                    <div class="faq-answer">Sair da reunião com: (1) o novo processo integrado organizado e documentado, (2) papéis e responsabilidades claros para cada área, (3) governança definida (comitês, ritmo de reuniões, KPIs) e (4) um plano de ação para implementação.</div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">Quanto tempo dura a sessão?</div>
+                    <div class="faq-answer">A sessão dura 2,5 dias: segunda-feira à tarde (13:30-17:00), terça-feira o dia todo (08:30-17:00) e quarta-feira o dia todo (08:30-17:00).</div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">Preciso fazer algo antes da sessão?</div>
+                    <div class="faq-answer">Sim! Há um pré-trabalho com 3 reflexões: (1) Processo Atual - descrever o processo em uma palavra e frustrações, (2) Futuro Desejado - como seria um dia perfeito, (3) Colaboração - sua contribuição e esperanças. Isso ajuda a ganhar tempo e alinha o grupo.</div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">O que são os Canvas?</div>
+                    <div class="faq-answer">Os Canvas são ferramentas visuais de trabalho colaborativo. Usaremos 7 canvas: A1 (Expectativa vs. Realidade), A2 (Mapa das Dores), A3 (Mapa de Empatia), A4 (Matriz RACI), A5 (Fluxo Ponta a Ponta), A6 (Governança) e A7 (Como Podemos?).</div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">Como funciona a dinâmica de trabalho?</div>
+                    <div class="faq-answer">Combinamos trabalho individual (reflexão), em pequenos grupos (discussão) e em plenária (validação). Usamos post-its, marcadores e os canvases impressos em tamanho grande (A0/A1) para máxima colaboração e visibilidade.</div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">E depois da sessão? Qual é o próximo passo?</div>
+                    <div class="faq-answer">Após a sessão, há um plano de 12 semanas: (1) Consolidação (Semana 1), (2) Validação (Semanas 2-3), (3) Piloto (Semanas 4-6), (4) Rollout (Semanas 7-12) e (5) Otimização (Semanas 13+).</div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">Qual é a regra mais importante da sessão?</div>
+                    <div class="faq-answer">Foco no PROCESSO, não em projetos específicos. Queremos desenhar o fluxo que gera valor integrado, não resolver problemas pontuais. Todos os problemas devem ser mapeados para melhorar o processo geral.</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function showSection(sectionId) {
+            // Hide all sections
+            document.querySelectorAll('.section').forEach(section => {
+                section.classList.remove('active');
+            });
+
+            // Remove active class from all nav buttons
+            document.querySelectorAll('.nav-btn').forEach(btn => {
+                btn.classList.remove('active');
+            });
+
+            // Show selected section
+            document.getElementById(sectionId).classList.add('active');
+
+            // Add active class to clicked button
+            event.target.classList.add('active');
+
+            // Scroll to top
+            window.scrollTo(0, 0);
+        }
+
+        // FAQ toggle functionality
+        document.querySelectorAll('.faq-question').forEach(question => {
+            question.addEventListener('click', function() {
+                this.parentElement.classList.toggle('active');
+            });
+        });
+    </script>
+</body>
+</html>

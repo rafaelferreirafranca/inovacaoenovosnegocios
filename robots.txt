@@ -1,0 +1,32 @@
+# robots.txt para Sessão de Design Thinking - Cibra
+
+User-agent: *
+Allow: /
+Disallow: /assets/
+Disallow: /*.json
+Disallow: /*.toml
+Disallow: /.git
+Disallow: /node_modules/
+
+# Permitir acesso a imagens
+Allow: /assets/*.png
+Allow: /assets/*.jpg
+Allow: /assets/*.jpeg
+Allow: /assets/*.gif
+Allow: /assets/*.svg
+
+# Crawl delay (em segundos)
+Crawl-delay: 1
+
+# Sitemap (descomente se tiver sitemap.xml)
+# Sitemap: https://seu-dominio.com/sitemap.xml
+
+# Regras específicas para bots
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+User-agent: MJ12bot
+Disallow: /

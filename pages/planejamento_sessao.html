@@ -1,0 +1,725 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Planejamento da Sessão de Design Thinking. Cronograma, objetivos e metodologia do workshop.">
+    <meta name="keywords" content="Planejamento, Cronograma, Design Thinking, Cibra">
+    <meta property="og:title" content="Planejamento da Sessão - Sessão de Design Thinking Cibra">
+    <meta property="og:description" content="Planejamento da Sessão de Design Thinking. Cronograma, objetivos e metodologia do workshop.">
+    <meta property="og:type" content="website">
+    <meta name="robots" content="index, follow">
+    <meta name="theme-color" content="#407928">
+    <link rel="icon" type="image/png" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect fill='%23407928' width='100' height='100'/><text x='50' y='75' font-size='60' font-weight='bold' fill='%23B0D235' text-anchor='middle'>C</text></svg>">
+    <title>Planejamento da Sessão - Cibra</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --verde-cibra: #B0D235;
+            --verde-escuro: #407928;
+            --branco: #FFFFFF;
+            --cinza-claro: #F5F5F5;
+            --cinza-escuro: #333333;
+            --cinza-medio: #666666;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            background-color: var(--cinza-claro);
+            color: var(--cinza-escuro);
+            line-height: 1.8;
+        }
+
+        /* Header */
+        header {
+            background: linear-gradient(135deg, var(--verde-escuro) 0%, #2d5a1f 100%);
+            color: var(--branco);
+            padding: 20px 0;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .header-container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .logo-section {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .logo-section img {
+            height: 35px;
+            width: auto;
+        }
+
+        .header-title h1 {
+            font-size: 20px;
+            font-weight: 700;
+            color: var(--branco);
+        }
+
+        .back-btn {
+            background: rgba(255,255,255,0.2);
+            border: 1px solid rgba(255,255,255,0.3);
+            color: var(--branco);
+            padding: 8px 16px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 13px;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            text-decoration: none;
+        }
+
+        .back-btn:hover {
+            background: var(--verde-cibra);
+            color: var(--verde-escuro);
+        }
+
+        /* Main Container */
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        .content {
+            background: var(--branco);
+            border-radius: 8px;
+            padding: 40px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+        }
+
+        h1 {
+            color: var(--verde-escuro);
+            font-size: 32px;
+            margin-bottom: 10px;
+            font-weight: 700;
+        }
+
+        .subtitle {
+            color: var(--cinza-medio);
+            font-size: 14px;
+            margin-bottom: 30px;
+            padding-bottom: 20px;
+            border-bottom: 2px solid var(--cinza-claro);
+        }
+
+        h2 {
+            color: var(--verde-escuro);
+            font-size: 24px;
+            margin-top: 40px;
+            margin-bottom: 20px;
+            font-weight: 700;
+            border-left: 4px solid var(--verde-cibra);
+            padding-left: 15px;
+        }
+
+        h3 {
+            color: var(--verde-escuro);
+            font-size: 18px;
+            margin-top: 25px;
+            margin-bottom: 15px;
+            font-weight: 600;
+        }
+
+        p {
+            margin-bottom: 15px;
+            color: var(--cinza-medio);
+            line-height: 1.8;
+        }
+
+        .highlight-box {
+            background: linear-gradient(135deg, rgba(176, 210, 53, 0.1) 0%, rgba(64, 121, 40, 0.05) 100%);
+            border-left: 4px solid var(--verde-cibra);
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 4px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            font-size: 14px;
+        }
+
+        th {
+            background: var(--verde-cibra);
+            color: var(--verde-escuro);
+            padding: 12px;
+            text-align: left;
+            font-weight: 600;
+        }
+
+        td {
+            border: 1px solid var(--cinza-claro);
+            padding: 12px;
+            color: var(--cinza-medio);
+        }
+
+        tr:nth-child(even) {
+            background: var(--cinza-claro);
+        }
+
+        .phase-card {
+            background: var(--cinza-claro);
+            border-left: 4px solid var(--verde-cibra);
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 4px;
+        }
+
+        .phase-card h4 {
+            color: var(--verde-escuro);
+            font-size: 16px;
+            margin-bottom: 10px;
+            font-weight: 600;
+        }
+
+        .phase-card p {
+            margin-bottom: 10px;
+        }
+
+        ul, ol {
+            margin-left: 20px;
+            margin-bottom: 20px;
+            color: var(--cinza-medio);
+        }
+
+        li {
+            margin-bottom: 10px;
+            line-height: 1.8;
+        }
+
+        .timeline {
+            position: relative;
+            padding: 20px 0;
+        }
+
+        .timeline-item {
+            display: flex;
+            margin-bottom: 30px;
+            position: relative;
+        }
+
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: 8px;
+            top: 30px;
+            width: 2px;
+            height: calc(100% + 30px);
+            background: var(--verde-cibra);
+        }
+
+        .timeline-item:last-child::before {
+            display: none;
+        }
+
+        .timeline-dot {
+            width: 20px;
+            height: 20px;
+            background: var(--verde-cibra);
+            border: 3px solid var(--branco);
+            border-radius: 50%;
+            margin-right: 20px;
+            margin-top: 5px;
+            flex-shrink: 0;
+            box-shadow: 0 0 0 3px var(--verde-cibra);
+        }
+
+        .timeline-content {
+            flex: 1;
+        }
+
+        .timeline-content h4 {
+            color: var(--verde-escuro);
+            font-weight: 600;
+            margin-bottom: 5px;
+        }
+
+        .timeline-content p {
+            margin: 0;
+        }
+
+        .footer {
+            margin-top: 60px;
+            padding-top: 20px;
+            border-top: 2px solid var(--cinza-claro);
+            text-align: center;
+            color: var(--cinza-medio);
+            font-size: 13px;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .header-container {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            .content {
+                padding: 25px;
+            }
+
+            h1 {
+                font-size: 24px;
+            }
+
+            h2 {
+                font-size: 20px;
+            }
+
+            table {
+                font-size: 12px;
+            }
+
+            th, td {
+                padding: 8px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-container">
+            <div class="logo-section">
+                <img src="../assets/LogoCibra-Branco-Horizontal-FundoTransparente.png" alt="Cibra Logo">
+                <div class="header-title">
+                    <h1>Planejamento da Sessão</h1>
+                </div>
+            </div>
+            <a href="../index.html" class="back-btn">← Voltar ao Início</a>
+        </div>
+    </header>
+
+    <div class="container">
+        <div class="content">
+            <h1>Planejamento da Sessão</h1>
+            <div class="subtitle">Estrutura Completa da Sessão de Design Thinking - 4 Dias</div>
+
+            <!-- Visão Geral -->
+            <h2>🎯 Visão Geral</h2>
+            <p>Esta sessão de 4 dias utiliza a metodologia do <strong>Duplo Diamante</strong> para integrar as áreas de Planejamento Estratégico, PMO, Novos Negócios e Novos Produtos na Cibra. O objetivo é criar um novo processo corporativo coeso, com papéis claros, responsabilidades definidas e uma estrutura de governança robusta. A quinta-feira é dedicada a visitas técnicas para conectar teoria e prática.</p>
+
+            <div class="highlight-box">
+                <strong>📊 Metodologia: Duplo Diamante</strong><br>
+                <strong>Fase 1 - Descoberta:</strong> Divergir para explorar o problema<br>
+                <strong>Fase 2 - Definição:</strong> Convergir para definir o problema<br>
+                <strong>Fase 3 - Desenvolvimento:</strong> Divergir para gerar soluções<br>
+                <strong>Fase 4 - Entrega:</strong> Convergir para entregar a solução
+            </div>
+
+            <!-- Objetivos -->
+            <h2>🎯 Objetivos da Sessão</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Fase</th>
+                        <th>Objetivo Principal</th>
+                        <th>Saída Esperada</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Descoberta</strong></td>
+                        <td>Mapear problemas e frustrações no processo atual</td>
+                        <td>Canvas A2 (Mapa das Dores) preenchido</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Definição</strong></td>
+                        <td>Definir o novo processo integrado e critérios de sucesso</td>
+                        <td>Canvas A5 (Fluxo) e A7 (Como Podemos?) validados</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Desenvolvimento</strong></td>
+                        <td>Detalhar papéis, responsabilidades e governança</td>
+                        <td>Canvas A4 (RACI) e A6 (Governança) completos</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Entrega</strong></td>
+                        <td>Validar o novo processo e comprometimento com ação</td>
+                        <td>Plano de ação e cronograma de implantação</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <!-- Cronograma -->
+            <h2>📅 Cronograma Detalhado</h2>
+
+            <h3>Dia 1 (Segunda-feira, 02 de Fevereiro)</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Horário</th>
+                        <th>Atividade</th>
+                        <th>Canvas</th>
+                        <th>Objetivo</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>13:30 - 14:30</td>
+                        <td>Abertura e Contextualização</td>
+                        <td>—</td>
+                        <td>Alinhar objetivos, agenda e criar ambiente de confiança</td>
+                    </tr>
+                    <tr>
+                        <td>14:30 - 15:30</td>
+                        <td>Estratégia e Tese de Inovação</td>
+                        <td>—</td>
+                        <td>Apresentar visão estratégica da Cibra</td>
+                    </tr>
+                    <tr>
+                        <td>15:45 - 16:25</td>
+                        <td>Expectativa vs. Realidade</td>
+                        <td>A1</td>
+                        <td>Mapear gap entre visão e realidade operacional</td>
+                    </tr>
+                    <tr>
+                        <td>16:25 - 16:55</td>
+                        <td>Alinhamento Conceitual</td>
+                        <td>—</td>
+                        <td>Padronizar termos-chave</td>
+                    </tr>
+                    <tr>
+                        <td>16:55 - 17:25</td>
+                        <td>Mapa das Dores</td>
+                        <td>A2</td>
+                        <td>Identificar e agrupar principais frustrações</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <h3>Dia 2 (Terça-feira, 03 de Fevereiro)</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Horário</th>
+                        <th>Atividade</th>
+                        <th>Canvas</th>
+                        <th>Objetivo</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>08:30 - 09:00</td>
+                        <td>Recapitulação e Priorização</td>
+                        <td>—</td>
+                        <td>Revisar aprendizados e priorizar problemas</td>
+                    </tr>
+                    <tr>
+                        <td>09:00 - 10:30</td>
+                        <td>Como Podemos? (Ideação)</td>
+                        <td>A7</td>
+                        <td>Gerar soluções criativas para problemas priorizados</td>
+                    </tr>
+                    <tr>
+                        <td>10:45 - 12:15</td>
+                        <td>Fluxo Ponta a Ponta 1.0</td>
+                        <td>A5</td>
+                        <td>Cocriar primeira versão do novo processo</td>
+                    </tr>
+                    <tr>
+                        <td>13:15 - 14:45</td>
+                        <td>Mapa de Empatia</td>
+                        <td>A3</td>
+                        <td>Aprofundar necessidades de cada área</td>
+                    </tr>
+                    <tr>
+                        <td>14:45 - 16:15</td>
+                        <td>Tempos e Movimentos (SLAs)</td>
+                        <td>—</td>
+                        <td>Estimar tempos de execução e gargalos</td>
+                    </tr>
+                    <tr>
+                        <td>16:15 - 17:00</td>
+                        <td>Recap do Dia 2</td>
+                        <td>—</td>
+                        <td>Consolidar aprendizados</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <h3>Dia 3 (Quarta-feira, 04 de Fevereiro)</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Horário</th>
+                        <th>Atividade</th>
+                        <th>Canvas</th>
+                        <th>Objetivo</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>08:30 - 09:00</td>
+                        <td>Abertura do Dia 3</td>
+                        <td>—</td>
+                        <td>Alinhar objetivos finais</td>
+                    </tr>
+                    <tr>
+                        <td>09:00 - 10:30</td>
+                        <td>Fluxo Detalhado</td>
+                        <td>A5</td>
+                        <td>Refinar fluxo com atividades e critérios</td>
+                    </tr>
+                    <tr>
+                        <td>11:00 - 12:30</td>
+                        <td>Matriz RACI</td>
+                        <td>A4</td>
+                        <td>Definir papéis e responsabilidades</td>
+                    </tr>
+                    <tr>
+                        <td>13:30 - 15:00</td>
+                        <td>Desenho da Governança</td>
+                        <td>A6</td>
+                        <td>Estruturar comitês, ritmo e KPIs</td>
+                    </tr>
+                    <tr>
+                        <td>15:15 - 16:30</td>
+                        <td>Plano de Ação</td>
+                        <td>—</td>
+                        <td>Definir ferramentas e infraestrutura</td>
+                    </tr>
+                    <tr>
+                        <td>16:30 - 17:00</td>
+                        <td>Encerramento</td>
+                        <td>—</td>
+                        <td>Celebração e comprometimento</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <h3>Dia 4 (Quinta-feira, 06 de Fevereiro)</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Horário</th>
+                        <th>Atividade</th>
+                        <th>Local</th>
+                        <th>Objetivo</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>08:30 - 11:00</td>
+                        <td>Visita à FEGA (Fazenda Experimental)</td>
+                        <td>FEGA</td>
+                        <td>Conhecer pesquisa agronômica aplicada e inovações em campo</td>
+                    </tr>
+                    <tr>
+                        <td>11:00 - 11:45</td>
+                        <td>Deslocamento até PUCPR</td>
+                        <td>Em trânsito</td>
+                        <td>Transporte para próxima parada</td>
+                    </tr>
+                    <tr>
+                        <td>12:00 - 13:30</td>
+                        <td>Intervalo para Almoço</td>
+                        <td>PUCPR</td>
+                        <td>Repouso e integração informal</td>
+                    </tr>
+                    <tr>
+                        <td>13:30 - 14:30</td>
+                        <td>Visita ao Centro de Realidade Estendida (CRE)</td>
+                        <td>PUCPR</td>
+                        <td>Conhecer tecnologias de VR/AR para inovação</td>
+                    </tr>
+                    <tr>
+                        <td>14:45 - 15:30</td>
+                        <td>Tour Hotmilk</td>
+                        <td>PUCPR</td>
+                        <td>Explorar ecossistema de inovação e startups</td>
+                    </tr>
+                    <tr>
+                        <td>15:30 - 16:00</td>
+                        <td>Núcleo de Inovação Corporativa (NIC) HOTMILK</td>
+                        <td>PUCPR</td>
+                        <td>Entender processos de inovação corporativa</td>
+                    </tr>
+                    <tr>
+                        <td>16:00 - 17:00</td>
+                        <td>Centro Integrado de Soluções em IA (CisIA)</td>
+                        <td>PUCPR</td>
+                        <td>Explorar aplicações de IA em negócios</td>
+                    </tr>
+                    <tr>
+                        <td>17:00 - 17:30</td>
+                        <td>Conclusão e Reflexões Finais</td>
+                        <td>PUCPR</td>
+                        <td>Consolidar aprendizados e próximos passos</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <!-- Canvas -->
+            <h2>🎎 Canvas Utilizados</h2>
+            <div class="phase-card">
+                <h4>Canvas A1: Expectativa vs. Realidade</h4>
+                <p><strong>Objetivo:</strong> Mapear o gap entre a visão estratégica e a realidade operacional.</p>
+                <p><strong>Quando:</strong> Dia 1 - Tarde</p>
+                <p><strong>Saída:</strong> Identificação dos primeiros pontos de fricção</p>
+            </div>
+
+            <div class="phase-card">
+                <h4>Canvas A2: Mapa das Dores</h4>
+                <p><strong>Objetivo:</strong> Identificar e agrupar as principais dores, frustrações e gargalos.</p>
+                <p><strong>Quando:</strong> Dia 1 - Tarde</p>
+                <p><strong>Saída:</strong> Lista priorizada de problemas</p>
+            </div>
+
+            <div class="phase-card">
+                <h4>Canvas A3: Mapa de Empatia</h4>
+                <p><strong>Objetivo:</strong> Aprofundar a compreensão sobre necessidades, dores e desejos de cada área.</p>
+                <p><strong>Quando:</strong> Dia 2 - Tarde</p>
+                <p><strong>Saída:</strong> Perspectivas consolidadas por área</p>
+            </div>
+
+            <div class="phase-card">
+                <h4>Canvas A4: Matriz RACI</h4>
+                <p><strong>Objetivo:</strong> Definir papéis (Responsável, Aprovador, Consultado, Informado) para cada atividade.</p>
+                <p><strong>Quando:</strong> Dia 3 - Manhã</p>
+                <p><strong>Saída:</strong> Matriz de responsabilidades clara</p>
+            </div>
+
+            <div class="phase-card">
+                <h4>Canvas A5: Fluxo Ponta a Ponta</h4>
+                <p><strong>Objetivo:</strong> Cocriar o novo processo integrado, mapeando etapas e interações.</p>
+                <p><strong>Quando:</strong> Dia 2 e 3</p>
+                <p><strong>Saída:</strong> Fluxo detalhado e validado</p>
+            </div>
+
+            <div class="phase-card">
+                <h4>Canvas A6: Governança</h4>
+                <p><strong>Objetivo:</strong> Estruturar comitês, ritmo de reuniões, indicadores e critérios de priorização.</p>
+                <p><strong>Quando:</strong> Dia 3 - Tarde</p>
+                <p><strong>Saída:</strong> Modelo de governança operacional</p>
+            </div>
+
+            <div class="phase-card">
+                <h4>Canvas A7: Como Podemos?</h4>
+                <p><strong>Objetivo:</strong> Transformar problemas em oportunidades e gerar soluções criativas.</p>
+                <p><strong>Quando:</strong> Dia 2 - Manhã</p>
+                <p><strong>Saída:</strong> Ideias validadas para o novo processo</p>
+            </div>
+
+            <!-- Participantes -->
+            <h2>👥 Participantes</h2>
+            <p>8 líderes de diferentes áreas da Cibra:</p>
+            <ul>
+                <li><strong>Alexandre Jahn</strong> - Diretor de Marketing e Novos Produtos</li>
+                <li><strong>Rodrigo Conor</strong> - Gerente de Novos Negócios e Inovação Aberta</li>
+                <li><strong>Pedro Filho</strong> - Analista de Inovação Aberta</li>
+                <li><strong>Pedro Mattos</strong> - Gerente de Novos Produtos</li>
+                <li><strong>Valter Assami</strong> - Gerente de P&D</li>
+                <li><strong>Fernando Neto</strong> - Gerente de Planejamento Estratégico e PMO</li>
+                <li><strong>Caio Franco</strong> - Coordenador de PMO</li>
+                <li><strong>Rafael França</strong> - Diretor de Novos Negócios e Inovação</li>
+            </ul>
+
+            <!-- Saídas Esperadas -->
+            <h2>📤 Saídas Esperadas</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Saída</th>
+                        <th>Descrição</th>
+                        <th>Responsável</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Novo Processo</strong></td>
+                        <td>Fluxo integrado documentado com etapas e interações</td>
+                        <td>Grupo</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Matriz RACI</strong></td>
+                        <td>Papéis e responsabilidades claros por atividade</td>
+                        <td>Grupo</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Governança</strong></td>
+                        <td>Comitês, ritmo, KPIs e critérios de priorização</td>
+                        <td>Grupo</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Plano de Ação</strong></td>
+                        <td>Cronograma de 12 semanas para implantação</td>
+                        <td>Facilitador</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Documentação</strong></td>
+                        <td>Fotos, notas e síntese dos canvases</td>
+                        <td>Facilitador</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <!-- Próximos Passos -->
+            <h2>🚀 Próximos Passos Pós-Sessão</h2>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <h4>Semana 1 - Consolidação</h4>
+                        <p>Documentar todos os canvases, consolidar aprendizados e preparar apresentação para stakeholders.</p>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <h4>Semanas 2-3 - Validação</h4>
+                        <p>Validar o novo processo com áreas não participantes e ajustar conforme feedback.</p>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <h4>Semanas 4-6 - Piloto</h4>
+                        <p>Executar piloto do novo processo com uma iniciativa real para validar na prática.</p>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <h4>Semanas 7-12 - Rollout</h4>
+                        <p>Implementar o novo processo em todas as iniciativas de inovação.</p>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <h4>Semana 13+ - Otimização</h4>
+                        <p>Monitorar KPIs, coletar feedback e otimizar continuamente o processo.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer">
+                <p>Planejamento da Sessão | Sessão de Design Thinking - Cibra | 2,5 Dias</p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
